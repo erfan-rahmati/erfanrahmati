@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>عرفان رحمتی | برنامه‌نویس و طراح سایت</title>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="assets/css/all.min.css">
+    <!-- Style Link File -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/portfolio.css">
+    <!-- Alpine.js -->
+    <script defer src="assets/js/cdn.min.js"></script>
+</head>
+
+<body>
+
+    <!-- ==================== HEADER WITH BRACKET LOGO & HAMBURGER MENU ==================== -->
+    <header class="header">
+        <div class="logo-area">
+            <p class="logo-text">
+                <span class="logo-bracket">&lt;</span>
+                erfan
+                <span class="logo-name">rahmati</span>
+                <span class="logo-bracket">/&gt;</span>
+            </p>
+        </div>
+
+        <!-- منوی دسکتاپ -->
+        <div class="nav-menu desktop-menu">
+            <a href="index.html" class="nav-link">خانه<div class="nav-underline"></div></a>
+            <a href="services.html" class="nav-link">خدمات<div class="nav-underline"></div></a>
+            <a href="aboutus.html" class="nav-link">درباره من<div class="nav-underline"></div></a>
+            <a href="portfolio.html" class="nav-link">نمونه کارها<div class="nav-underline"></div></a>
+            <a href="contactus.html" class="nav-link">تماس با من<div class="nav-underline"></div></a>
+            <a href="blog.html" class="nav-link">وبلاگ من<div class="nav-underline"></div></a>
+        </div>
+
+        <!-- دکمه‌های سمت چپ دسکتاپ -->
+        <div class="actions-area desktop-actions">
+            <button id="themeToggle" class="theme-btn">
+                <i id="themeIcon" class="fas fa-moon"></i>
+            </button>
+            <a href="ai-assistant.html" class="btn-smart"><i class="fas fa-robot"></i> منشی هوشمند</a>
+            <a href="#" class="btn-outline">درخواست همکاری</a>
+        </div>
+
+        <!-- دکمه همبرگری (فقط در موبایل و تبلت) -->
+        <div class="hamburger-menu" id="hamburgerBtn">
+            <div class="hamburger-line"></div>
+            <div class="hamburger-line"></div>
+            <div class="hamburger-line"></div>
+        </div>
+    </header>
+
+    <!-- منوی موبایل (اسلاید از راست) -->
+    <div class="mobile-nav" id="mobileNav">
+        <div class="mobile-nav-header">
+            <div class="mobile-logo">
+                <span class="mobile-logo-bracket">&lt;</span>
+                erfan
+                <span class="mobile-logo-name">rahmati</span>
+                <span class="mobile-logo-bracket">/&gt;</span>
+            </div>
+            <button class="mobile-nav-close" id="closeMobileNav">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div class="mobile-nav-links">
+            <a href="index.html" class="mobile-nav-link">خانه</a>
+            <a href="services.html" class="mobile-nav-link">خدمات</a>
+            <a href="aboutus.html" class="mobile-nav-link">درباره من</a>
+            <a href="portfolio.html" class="mobile-nav-link">نمونه کارها</a>
+            <a href="contactus.html" class="mobile-nav-link">تماس با من</a>
+            <a href="blog.html" class="mobile-nav-link">وبلاگ من</a>
+        </div>
+        <div class="mobile-nav-actions">
+            <button id="mobileThemeToggle" class="mobile-theme-btn">
+                <i id="mobileThemeIcon" class="fas fa-moon"></i>
+                <span>تغییر تم</span>
+            </button>
+            <a href="ai-assistant.html" class="mobile-btn-smart"><i class="fas fa-robot"></i> منشی هوشمند</a>
+            <a href="#" class="mobile-btn-outline">درخواست همکاری</a>
+        </div>
+    </div>
+
+    <!-- اوورلی (پشت منوی موبایل) -->
+    <div class="mobile-overlay" id="mobileOverlay"></div>
+
+
+    <!-- ==================== PORTFOLIO PAGE CONTENT (UNIQUE MASONRY) ==================== -->
+    <main class="portfolio-page">
+        <div class="portfolio-container">
+            <!-- هدر -->
+            <div class="portfolio-header">
+                <div class="portfolio-badge"><i class="fas fa-star-of-life"></i> نمونه کارها</div>
+                <h1>پروژه‌های <span>شاخص</span> من</h1>
+                <p>مجموعه‌ای از تجربیات موفق در حوزه‌های مختلف برنامه‌نویسی، طراحی و هوش مصنوعی</p>
+            </div>
+
+            <!-- فیلتر دکمه‌ها (مدرن و مینیمال) -->
+            <div class="portfolio-filters" id="portfolioFilters">
+                <button class="filter-btn active" data-filter="all">همه پروژه‌ها</button>
+                <button class="filter-btn" data-filter="web">طراحی سایت</button>
+                <button class="filter-btn" data-filter="app">اپلیکیشن موبایل</button>
+                <button class="filter-btn" data-filter="ai">هوش مصنوعی</button>
+                <button class="filter-btn" data-filter="branding">هویت بصری</button>
+            </div>
+
+            <!-- گالری موزاییکی با چیدمان خاص (Masonry) -->
+            <div class="portfolio-masonry" id="portfolioMasonry">
+                <!-- پروژه 1 -->
+                <div class="portfolio-item" data-category="web" data-title="سایت فروشگاهی بین‌المللی"
+                    data-tech="React, Laravel, MySQL">
+                    <div class="portfolio-item-inner">
+                        <div class="portfolio-image">
+                            <img src="assets/images/Tala-Banner.jpg" alt="سایت فروشگاهی">
+                            <div class="portfolio-overlay">
+                                <div class="portfolio-overlay-content">
+                                    <h3>سایت فروشگاهی بین‌المللی</h3>
+                                    <p>پلتفرم کامل فروش با چند درگاه پرداخت، پنل مدیریت پیشرفته و سئو شده</p>
+                                    <div class="portfolio-tech">React - Laravel - MySQL</div>
+                                    <div class="link-wrapper">
+                                        <a href="#" class="portfolio-link">مشاهده جزئیات <i
+                                                class="fas fa-arrow-left"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- پروژه 2 -->
+                <div class="portfolio-item" data-category="ai" data-title="پروژه برنجک | تشخیص هوشمند برنج"
+                    data-tech="Python, TensorFlow, OpenCV">
+                    <div class="portfolio-item-inner">
+                        <div class="portfolio-image">
+                            <img src="assets/images/Mobile-Banner.jpg" alt="پروژه برنجک">
+                            <div class="portfolio-overlay">
+                                <div class="portfolio-overlay-content">
+                                    <h3>پروژه برنجک</h3>
+                                    <p>سیستم تشخیص هوشمند برنج با پردازش تصویر – دقت ۹۶٪</p>
+                                    <div class="portfolio-tech">Python - TensorFlow - OpenCV</div>
+                                    <div class="link-wrapper">
+                                        <a href="#" class="portfolio-link">مشاهده جزئیات <i
+                                                class="fas fa-arrow-left"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- پروژه 3 -->
+                <div class="portfolio-item" data-category="app" data-title="اپلیکیشن تاکسی اینترنتی"
+                    data-tech="Flutter, Laravel, WebSocket">
+                    <div class="portfolio-item-inner">
+                        <div class="portfolio-image">
+                            <img src="assets/images/Tala-Banner.jpg" alt="اپلیکیشن تاکسی">
+                            <div class="portfolio-overlay">
+                                <div class="portfolio-overlay-content">
+                                    <h3>اپلیکیشن تاکسی اینترنتی</h3>
+                                    <p>سیستم موقعیت‌یابی لحظه‌ای، مسیریابی و پرداخت آنلاین</p>
+                                    <div class="portfolio-tech">Flutter - Laravel - WebSocket</div>
+                                    <div class="link-wrapper">
+                                        <a href="#" class="portfolio-link">مشاهده جزئیات <i
+                                                class="fas fa-arrow-left"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- پروژه 4 -->
+                <div class="portfolio-item" data-category="web" data-title="داشبورد مدیریت هوشمند"
+                    data-tech="ASP.NET, React, Chart.js">
+                    <div class="portfolio-item-inner">
+                        <div class="portfolio-image">
+                            <img src="assets/images/Mobile-Banner.jpg" alt="داشبورد">
+                            <div class="portfolio-overlay">
+                                <div class="portfolio-overlay-content">
+                                    <h3>داشبورد مدیریت هوشمند</h3>
+                                    <p>تحلیل داده‌های لحظه‌ای و گزارش‌گیری خودکار</p>
+                                    <div class="portfolio-tech">ASP.NET - React - Chart.js</div>
+                                    <div class="link-wrapper">
+                                        <a href="#" class="portfolio-link">مشاهده جزئیات <i
+                                                class="fas fa-arrow-left"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- پروژه 5 -->
+                <div class="portfolio-item" data-category="branding" data-title="هویت بصری برند کدیاد"
+                    data-tech="Figma, Adobe Illustrator">
+                    <div class="portfolio-item-inner">
+                        <div class="portfolio-image">
+                            <img src="assets/images/Tala-Banner.jpg" alt="برندینگ کدیاد">
+                            <div class="portfolio-overlay">
+                                <div class="portfolio-overlay-content">
+                                    <h3>هویت بصری برند کدیاد</h3>
+                                    <p>طراحی لوگو، پالت رنگی و رابط کاربری مدرن</p>
+                                    <div class="portfolio-tech">Figma - Adobe Illustrator</div>
+                                    <div class="link-wrapper">
+                                        <a href="#" class="portfolio-link">مشاهده جزئیات <i
+                                                class="fas fa-arrow-left"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- پروژه 6 -->
+                <div class="portfolio-item" data-category="app" data-title="اپلیکیشن فروشگاهی موبایل"
+                    data-tech="Flutter, Firebase">
+                    <div class="portfolio-item-inner">
+                        <div class="portfolio-image">
+                            <img src="assets/images/Mobile-Banner.jpg" alt="اپلیکیشن فروشگاهی">
+                            <div class="portfolio-overlay">
+                                <div class="portfolio-overlay-content">
+                                    <h3>اپلیکیشن فروشگاهی موبایل</h3>
+                                    <p>تجربه خرید آسان روی موبایل با پنل مدیریت</p>
+                                    <div class="portfolio-tech">Flutter - Firebase</div>
+                                    <div class="link-wrapper">
+                                        <a href="#" class="portfolio-link">مشاهده جزئیات <i
+                                                class="fas fa-arrow-left"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- پروژه 7 -->
+                <div class="portfolio-item" data-category="ai" data-title="سیستم تشخیص چهره"
+                    data-tech="Python, OpenCV, Deep Learning">
+                    <div class="portfolio-item-inner">
+                        <div class="portfolio-image">
+                            <img src="assets/images/Tala-Banner.jpg" alt="تشخیص چهره">
+                            <div class="portfolio-overlay">
+                                <div class="portfolio-overlay-content">
+                                    <h3>سیستم تشخیص چهره</h3>
+                                    <p>پردازش ویدئوی زنده و تشخیص هویت با دقت بالا</p>
+                                    <div class="portfolio-tech">Python - OpenCV - Deep Learning</div>
+                                    <div class="link-wrapper">
+                                        <a href="#" class="portfolio-link">مشاهده جزئیات <i
+                                                class="fas fa-arrow-left"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- پروژه 8 -->
+                <div class="portfolio-item" data-category="web" data-title="وبسایت شخصی وکیل"
+                    data-tech="WordPress, PHP, Elementor">
+                    <div class="portfolio-item-inner">
+                        <div class="portfolio-image">
+                            <img src="assets/images/Mobile-Banner.jpg" alt="وبسایت وکیل">
+                            <div class="portfolio-overlay">
+                                <div class="portfolio-overlay-content">
+                                    <h3>وبسایت شخصی وکیل</h3>
+                                    <p>طراحی اختصاصی با سیستم نوبت‌دهی آنلاین</p>
+                                    <div class="portfolio-tech">WordPress - PHP - Elementor</div>
+                                    <div class="link-wrapper">
+                                        <a href="#" class="portfolio-link">مشاهده جزئیات <i
+                                                class="fas fa-arrow-left"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CTA پایین صفحه -->
+            <div class="portfolio-cta">
+                <div class="cta-inner">
+                    <h3>آماده‌ای پروژه خودت رو شروع کنی؟</h3>
+                    <p>من اینجام تا ایده‌های تو رو به واقعیت تبدیل کنم</p>
+                    <a href="#contact" class="cta-button">درخواست مشاوره <i class="fas fa-arrow-left"></i></a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+
+    <!-- ==================== FOOTER ==================== -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-content">
+                <!-- لوگو و نام برند -->
+                <div class="footer-brand">
+                    <div class="logo-area">
+                        <p class="logo-text">
+                            <span class="logo-bracket">&lt;</span>
+                            erfan
+                            <span class="logo-name">rahmati</span>
+                            <span class="logo-bracket">/&gt;</span>
+                        </p>
+                    </div>
+                    <p class="footer-bio">
+                        برنامه‌نویس ارشد | طراح اپلیکیشن | مدیر فنی (CTO)
+                    </p>
+                </div>
+
+                <!-- لینک‌های سریع -->
+                <div class="footer-links">
+                    <div class="footer-links-column">
+                        <h4>دسترسی سریع</h4>
+                        <ul>
+                            <li><a href="#">خانه</a></li>
+                            <li><a href="#">پروژه‌ها</a></li>
+                            <li><a href="#">درباره من</a></li>
+                            <li><a href="#">تماس با من</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-links-column">
+                        <h4>خدمات</h4>
+                        <ul>
+                            <li><a href="#">طراحی سایت</a></li>
+                            <li><a href="#">اپلیکیشن موبایل</a></li>
+                            <li><a href="#">هوش مصنوعی</a></li>
+                            <li><a href="#">سئو و بهینه‌سازی</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-links-column">
+                        <h4>قوانین</h4>
+                        <ul>
+                            <li><a href="#">حریم خصوصی</a></li>
+                            <li><a href="#">شرایط همکاری</a></li>
+                            <li><a href="#">ضمانت‌ها</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- شبکه‌های اجتماعی -->
+                <div class="footer-social">
+                    <h4>دنبال کنید</h4>
+                    <div class="social-icons-footer">
+                        <a href="https://github.com/erfanrahmati" target="_blank" class="social-icon-footer">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="https://linkedin.com/in/erfanrahmati" target="_blank" class="social-icon-footer">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="https://twitter.com/erfanrahmati" target="_blank" class="social-icon-footer">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="https://instagram.com/erfanrahmati" target="_blank" class="social-icon-footer">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- خط جداساز -->
+            <div class="footer-divider"></div>
+
+            <!-- کپی‌رایت -->
+            <div class="footer-copyright">
+                <p>&copy; ۲۰۲۵ - ۱۴۰۴ | تمامی حقوق برای <strong class="copyright-name">عرفان رحمتی</strong> محفوظ است.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+
+    <script src="assets/js/script.js"></script>
+    <script src="assets/js/portfolio.js"></script>
+</body>
+
+</html>

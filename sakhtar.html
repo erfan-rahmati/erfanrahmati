@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>عرفان رحمتی | برنامه‌نویس و طراح سایت</title>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="assets/css/all.min.css">
+    <!-- Style Link File -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <!-- Alpine.js -->
+    <script defer src="assets/js/cdn.min.js"></script>
+</head>
+
+<body>
+
+    <!-- ==================== HEADER WITH BRACKET LOGO & HAMBURGER MENU ==================== -->
+    <header class="header">
+        <div class="logo-area">
+            <p class="logo-text">
+                <span class="logo-bracket">&lt;</span>
+                erfan
+                <span class="logo-name">rahmati</span>
+                <span class="logo-bracket">/&gt;</span>
+            </p>
+        </div>
+
+        <!-- منوی دسکتاپ -->
+        <div class="nav-menu desktop-menu">
+            <a href="index.html" class="nav-link">خانه<div class="nav-underline"></div></a>
+            <a href="services.html" class="nav-link">خدمات<div class="nav-underline"></div></a>
+            <a href="aboutus.html" class="nav-link">درباره من<div class="nav-underline"></div></a>
+            <a href="portfolio.html" class="nav-link">نمونه کارها<div class="nav-underline"></div></a>
+            <a href="contactus.html" class="nav-link">تماس با من<div class="nav-underline"></div></a>
+            <a href="blog.html" class="nav-link">وبلاگ من<div class="nav-underline"></div></a>
+        </div>
+
+        <!-- دکمه‌های سمت چپ دسکتاپ -->
+        <div class="actions-area desktop-actions">
+            <button id="themeToggle" class="theme-btn">
+                <i id="themeIcon" class="fas fa-moon"></i>
+            </button>
+            <a href="ai-assistant.html" class="btn-smart"><i class="fas fa-robot"></i> منشی هوشمند</a>
+            <a href="#" class="btn-outline">درخواست همکاری</a>
+        </div>
+
+        <!-- دکمه همبرگری (فقط در موبایل و تبلت) -->
+        <div class="hamburger-menu" id="hamburgerBtn">
+            <div class="hamburger-line"></div>
+            <div class="hamburger-line"></div>
+            <div class="hamburger-line"></div>
+        </div>
+    </header>
+
+    <!-- منوی موبایل (اسلاید از راست) -->
+    <div class="mobile-nav" id="mobileNav">
+        <div class="mobile-nav-header">
+            <div class="mobile-logo">
+                <span class="mobile-logo-bracket">&lt;</span>
+                erfan
+                <span class="mobile-logo-name">rahmati</span>
+                <span class="mobile-logo-bracket">/&gt;</span>
+            </div>
+            <button class="mobile-nav-close" id="closeMobileNav">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div class="mobile-nav-links">
+            <a href="index.html" class="mobile-nav-link">خانه</a>
+            <a href="services.html" class="mobile-nav-link">خدمات</a>
+            <a href="aboutus.html" class="mobile-nav-link">درباره من</a>
+            <a href="portfolio.html" class="mobile-nav-link">نمونه کارها</a>
+            <a href="contactus.html" class="mobile-nav-link">تماس با من</a>
+            <a href="blog.html" class="mobile-nav-link">وبلاگ من</a>
+        </div>
+        <div class="mobile-nav-actions">
+            <button id="mobileThemeToggle" class="mobile-theme-btn">
+                <i id="mobileThemeIcon" class="fas fa-moon"></i>
+                <span>تغییر تم</span>
+            </button>
+            <a href="ai-assistant.html" class="mobile-btn-smart"><i class="fas fa-robot"></i> منشی هوشمند</a>
+            <a href="#" class="mobile-btn-outline">درخواست همکاری</a>
+        </div>
+    </div>
+
+    <!-- اوورلی (پشت منوی موبایل) -->
+    <div class="mobile-overlay" id="mobileOverlay"></div>
+
+
+
+
+
+    <!-- ==================== FOOTER ==================== -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-content">
+                <!-- لوگو و نام برند -->
+                <div class="footer-brand">
+                    <div class="logo-area">
+                        <p class="logo-text">
+                            <span class="logo-bracket">&lt;</span>
+                            erfan
+                            <span class="logo-name">rahmati</span>
+                            <span class="logo-bracket">/&gt;</span>
+                        </p>
+                    </div>
+                    <p class="footer-bio">
+                        برنامه‌نویس ارشد | طراح اپلیکیشن | مدیر فنی (CTO)
+                    </p>
+                </div>
+
+                <!-- لینک‌های سریع -->
+                <div class="footer-links">
+                    <div class="footer-links-column">
+                        <h4>دسترسی سریع</h4>
+                        <ul>
+                            <li><a href="#">خانه</a></li>
+                            <li><a href="#">پروژه‌ها</a></li>
+                            <li><a href="#">درباره من</a></li>
+                            <li><a href="#">تماس با من</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-links-column">
+                        <h4>خدمات</h4>
+                        <ul>
+                            <li><a href="#">طراحی سایت</a></li>
+                            <li><a href="#">اپلیکیشن موبایل</a></li>
+                            <li><a href="#">هوش مصنوعی</a></li>
+                            <li><a href="#">سئو و بهینه‌سازی</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-links-column">
+                        <h4>قوانین</h4>
+                        <ul>
+                            <li><a href="#">حریم خصوصی</a></li>
+                            <li><a href="#">شرایط همکاری</a></li>
+                            <li><a href="#">ضمانت‌ها</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- شبکه‌های اجتماعی -->
+                <div class="footer-social">
+                    <h4>دنبال کنید</h4>
+                    <div class="social-icons-footer">
+                        <a href="https://github.com/erfanrahmati" target="_blank" class="social-icon-footer">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="https://linkedin.com/in/erfanrahmati" target="_blank" class="social-icon-footer">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="https://twitter.com/erfanrahmati" target="_blank" class="social-icon-footer">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="https://instagram.com/erfanrahmati" target="_blank" class="social-icon-footer">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- خط جداساز -->
+            <div class="footer-divider"></div>
+
+            <!-- کپی‌رایت -->
+            <div class="footer-copyright">
+                <p>&copy; ۲۰۲۵ - ۱۴۰۴ | تمامی حقوق برای <strong class="copyright-name">عرفان رحمتی</strong> محفوظ است.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+
+<script src="assets/js/script.js"></script>    
+</body>
+
+</html>

@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>عرفان رحمتی | برنامه‌نویس و طراح سایت</title>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="assets/css/all.min.css">
+    <!-- Style Link File -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/aboutus.css">
+    <!-- Alpine.js -->
+    <script defer src="assets/js/cdn.min.js"></script>
+</head>
+
+<body>
+
+    <!-- ==================== HEADER WITH BRACKET LOGO & HAMBURGER MENU ==================== -->
+    <header class="header">
+        <div class="logo-area">
+            <p class="logo-text">
+                <span class="logo-bracket">&lt;</span>
+                erfan
+                <span class="logo-name">rahmati</span>
+                <span class="logo-bracket">/&gt;</span>
+            </p>
+        </div>
+
+        <!-- منوی دسکتاپ -->
+        <div class="nav-menu desktop-menu">
+            <a href="index.html" class="nav-link">خانه<div class="nav-underline"></div></a>
+            <a href="services.html" class="nav-link">خدمات<div class="nav-underline"></div></a>
+            <a href="aboutus.html" class="nav-link">درباره من<div class="nav-underline"></div></a>
+            <a href="portfolio.html" class="nav-link">نمونه کارها<div class="nav-underline"></div></a>
+            <a href="contactus.html" class="nav-link">تماس با من<div class="nav-underline"></div></a>
+            <a href="blog.html" class="nav-link">وبلاگ من<div class="nav-underline"></div></a>
+        </div>
+
+        <!-- دکمه‌های سمت چپ دسکتاپ -->
+        <div class="actions-area desktop-actions">
+            <button id="themeToggle" class="theme-btn">
+                <i id="themeIcon" class="fas fa-moon"></i>
+            </button>
+            <a href="ai-assistant.html" class="btn-smart"><i class="fas fa-robot"></i> منشی هوشمند</a>
+            <a href="#" class="btn-outline">درخواست همکاری</a>
+        </div>
+
+        <!-- دکمه همبرگری (فقط در موبایل و تبلت) -->
+        <div class="hamburger-menu" id="hamburgerBtn">
+            <div class="hamburger-line"></div>
+            <div class="hamburger-line"></div>
+            <div class="hamburger-line"></div>
+        </div>
+    </header>
+
+    <!-- منوی موبایل (اسلاید از راست) -->
+    <div class="mobile-nav" id="mobileNav">
+        <div class="mobile-nav-header">
+            <div class="mobile-logo">
+                <span class="mobile-logo-bracket">&lt;</span>
+                erfan
+                <span class="mobile-logo-name">rahmati</span>
+                <span class="mobile-logo-bracket">/&gt;</span>
+            </div>
+            <button class="mobile-nav-close" id="closeMobileNav">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div class="mobile-nav-links">
+            <a href="index.html" class="mobile-nav-link">خانه</a>
+            <a href="services.html" class="mobile-nav-link">خدمات</a>
+            <a href="aboutus.html" class="mobile-nav-link">درباره من</a>
+            <a href="portfolio.html" class="mobile-nav-link">نمونه کارها</a>
+            <a href="contactus.html" class="mobile-nav-link">تماس با من</a>
+            <a href="blog.html" class="mobile-nav-link">وبلاگ من</a>
+        </div>
+        <div class="mobile-nav-actions">
+            <button id="mobileThemeToggle" class="mobile-theme-btn">
+                <i id="mobileThemeIcon" class="fas fa-moon"></i>
+                <span>تغییر تم</span>
+            </button>
+            <a href="ai-assistant.html" class="mobile-btn-smart"><i class="fas fa-robot"></i> منشی هوشمند</a>
+            <a href="#" class="mobile-btn-outline">درخواست همکاری</a>
+        </div>
+    </div>
+
+    <!-- اوورلی (پشت منوی موبایل) -->
+    <div class="mobile-overlay" id="mobileOverlay"></div>
+
+
+    <!-- ==================== ABOUT PAGE CONTENT ==================== -->
+    <main class="about-main">
+        <!-- ========== هدر درباره من ========== -->
+        <section class="about-hero">
+            <div class="about-hero-badge">
+                <i class="fas fa-user-astronaut"></i>
+                <span>درباره عرفان رحمتی</span>
+            </div>
+            <h1>معمار <span>دیجیتال</span> <span class="highlight">کسب‌وکارها</span></h1>
+            <p>برنامه‌نویس ارشد، طراح اپلیکیشن و مدیر فنی با بیش از ۵ سال سابقه درخشان</p>
+            <div class="hero-stats">
+                <div class="hero-stat">
+                    <span class="stat-number">۵+</span>
+                    <span class="stat-label">سال تجربه</span>
+                </div>
+                <div class="hero-stat">
+                    <span class="stat-number">۲۰+</span>
+                    <span class="stat-label">پروژه موفق</span>
+                </div>
+                <div class="hero-stat">
+                    <span class="stat-number">۹۸٪</span>
+                    <span class="stat-label">رضایت مشتری</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========== معرفی کوتاه و حرفه‌ای ========== -->
+        <section class="about-intro">
+            <div class="intro-card">
+                <div class="intro-icon">
+                    <i class="fas fa-quote-right"></i>
+                </div>
+                <p class="intro-text">
+                    من <strong>عرفان رحمتی</strong> هستم، برنامه‌نویس ارشد، طراح اپلیکیشن موبایل و مدیر فنی (CTO).
+                    با بیش از ۵ سال تجربه در شرکت‌های معتبر، تخصص من تبدیل ایده‌های شما به محصولات دیجیتال موفق است.
+                    اعتقاد دارم کد تمیز و معماری اصولی، پایه‌های یک کسب‌وکار دیجیتال پایدار هستند.
+                </p>
+            </div>
+        </section>
+
+        <!-- ========== تایم‌لاین سوابق کاری (ویژوال و مدرن) ========== -->
+        <section class="about-timeline">
+            <h2 class="section-title">سوابق <span>حرفه‌ای</span></h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <span class="timeline-date">۱۴۰۳ - اکنون</span>
+                        <h3>مدیر فنی (CTO) - پیکس‌شو</h3>
+                        <p>مدیریت تیم فنی، معماری سیستم، پیاده‌سازی زیرساخت ابری و نظارت بر فرآیندهای توسعه</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <span class="timeline-date">۱۴۰۱ - ۱۴۰۳</span>
+                        <h3>مدیر IT - هوشمندسازان فرامرزی</h3>
+                        <p>رهبری تیم برنامه‌نویسی، طراحی اپلیکیشن‌های موبایل و وب، استقرار متدولوژی چابک</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <span class="timeline-date">۱۳۹۹ - ۱۴۰۱</span>
+                        <h3>توسعه‌دهنده ارشد - سای‌ویژن</h3>
+                        <p>توسعه سیستم‌های هوشمند و پردازش تصویر (پروژه برنجک - دقت ۹۶٪)</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <span class="timeline-date">۱۳۹۸ - ۱۳۹۹</span>
+                        <h3>طراح اپلیکیشن - فالکون</h3>
+                        <p>طراحی و پیاده‌سازی اپلیکیشن‌های موبایل با Flutter و Swift</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========== مهارت‌های کلیدی به صورت دایره‌ای مدرن ========== -->
+        <section class="about-skills">
+            <h2 class="section-title">تخصص‌های <span>کلیدی</span></h2>
+            <div class="skills-grid">
+                <div class="skill-circle-card">
+                    <div class="circle-progress" data-percent="95">
+                        <svg viewBox="0 0 100 100">
+                            <circle cx="50" cy="50" r="45" class="circle-bg"></circle>
+                            <circle cx="50" cy="50" r="45" class="circle-fill"
+                                style="stroke-dasharray: 283; stroke-dashoffset: 283;"></circle>
+                        </svg>
+                        <div class="circle-text">95%</div>
+                    </div>
+                    <h3>برنامه‌نویسی وب</h3>
+                    <p>Laravel, React, ASP.NET</p>
+                </div>
+                <div class="skill-circle-card">
+                    <div class="circle-progress" data-percent="90">
+                        <svg viewBox="0 0 100 100">
+                            <circle cx="50" cy="50" r="45" class="circle-bg"></circle>
+                            <circle cx="50" cy="50" r="45" class="circle-fill"
+                                style="stroke-dasharray: 283; stroke-dashoffset: 283;"></circle>
+                        </svg>
+                        <div class="circle-text">90%</div>
+                    </div>
+                    <h3>اپلیکیشن موبایل</h3>
+                    <p>Flutter, Swift, Kotlin</p>
+                </div>
+                <div class="skill-circle-card">
+                    <div class="circle-progress" data-percent="88">
+                        <svg viewBox="0 0 100 100">
+                            <circle cx="50" cy="50" r="45" class="circle-bg"></circle>
+                            <circle cx="50" cy="50" r="45" class="circle-fill"
+                                style="stroke-dasharray: 283; stroke-dashoffset: 283;"></circle>
+                        </svg>
+                        <div class="circle-text">88%</div>
+                    </div>
+                    <h3>هوش مصنوعی</h3>
+                    <p>TensorFlow, OpenCV</p>
+                </div>
+                <div class="skill-circle-card">
+                    <div class="circle-progress" data-percent="92">
+                        <svg viewBox="0 0 100 100">
+                            <circle cx="50" cy="50" r="45" class="circle-bg"></circle>
+                            <circle cx="50" cy="50" r="45" class="circle-fill"
+                                style="stroke-dasharray: 283; stroke-dashoffset: 283;"></circle>
+                        </svg>
+                        <div class="circle-text">92%</div>
+                    </div>
+                    <h3>معماری نرم‌افزار</h3>
+                    <p>مقیاس‌پذیر و امن</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========== پروژه شاخص (برنجک) ========== -->
+        <section class="about-featured-project">
+            <div class="featured-card">
+                <div class="featured-icon">
+                    <i class="fas fa-seedling"></i>
+                </div>
+                <div class="featured-content">
+                    <h3>پروژه شاخص: <span>برنجک</span></h3>
+                    <p>سیستم تشخیص هوشمند برنج با پردازش تصویر – دقت ۹۶٪</p>
+                    <div class="featured-tech">
+                        <span>Python</span>
+                        <span>TensorFlow</span>
+                        <span>OpenCV</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========== همکاری با برندهای معتبر ========== -->
+        <section class="about-brands">
+            <h2 class="section-title">همکاری با <span>برندهای معتبر</span></h2>
+            <div class="brands-grid">
+                <div class="brand-item">
+                    <i class="fas fa-building"></i>
+                    <span>پیکس‌شو</span>
+                </div>
+                <div class="brand-item">
+                    <i class="fas fa-chart-line"></i>
+                    <span>فالکون</span>
+                </div>
+                <div class="brand-item">
+                    <i class="fas fa-code"></i>
+                    <span>کدیاد</span>
+                </div>
+                <div class="brand-item">
+                    <i class="fas fa-eye"></i>
+                    <span>سای‌ویژن</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========== تماس سریع (CTA) ========== -->
+        <section class="about-cta">
+            <div class="cta-card">
+                <h3>آماده همکاری با شما هستم</h3>
+                <p>برای مشاوره رایگان و شروع پروژه، همین حالا با من تماس بگیرید</p>
+                <a href="#contactFormSection" class="cta-button">درخواست مشاوره <i class="fas fa-arrow-left"></i></a>
+            </div>
+        </section>
+
+        <!-- ========== فرم تماس (همانند صفحه خدمات) ========== -->
+        <div id="contactFormSection">
+            <section class="contact-section">
+                <div class="contact-container">
+                    <div class="contact-header">
+                        <span class="contact-badge"><i class="fas fa-handshake"></i> درخواست همکاری</span>
+                        <h2 class="contact-title">آماده <span class="contact-title-highlight">همکاری</span> با شما هستم
+                        </h2>
+                        <p class="contact-subtitle">پروژه خود را به من بسپارید تا بهترین راهکار دیجیتال را دریافت کنید
+                        </p>
+                    </div>
+                    <div class="contact-wrapper">
+                        <form class="contact-form" id="contactForm">
+                            <div class="form-row">
+                                <div class="form-group"><label><i class="fas fa-user"></i> نام و نام
+                                        خانوادگی</label><input type="text" id="fullname" placeholder="مثال: عرفان رحمتی"
+                                        required></div>
+                                <div class="form-group"><label><i class="fas fa-phone-alt"></i> شماره تماس</label><input
+                                        type="tel" id="phone" placeholder="مثال: ۰۹۱۲۳۴۵۶۷۸۹" required></div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label><i class="fas fa-code"></i> نوع پروژه</label>
+                                    <div class="modal-input-trigger" id="projectTypeTriggerBtn">
+                                        <div class="modal-input-display"><span id="projectTypeDisplay">انتخاب
+                                                کنید</span><i class="fas fa-chevron-left"></i></div>
+                                    </div>
+                                    <input type="hidden" id="projectType" name="projectType">
+                                </div>
+                                <div class="form-group">
+                                    <label><i class="fas fa-clock"></i> مدت زمان پیشنهادی</label>
+                                    <div class="modal-input-trigger" id="deadlineTriggerBtn">
+                                        <div class="modal-input-display"><span id="deadlineDisplay">انتخاب کنید</span><i
+                                                class="fas fa-chevron-left"></i></div>
+                                    </div>
+                                    <input type="hidden" id="deadline" name="deadline">
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group"><label><i class="fas fa-wallet"></i> بودجه پیشنهادی
+                                        (تومان)</label><input type="text" id="budget" placeholder="مثال: ۱۵,۰۰۰,۰۰۰">
+                                </div>
+                                <div class="form-group">
+                                    <div class="empty-space"></div>
+                                </div>
+                            </div>
+                            <div class="form-group"><label><i class="fas fa-align-right"></i> توضیحات
+                                    پروژه</label><textarea id="description" rows="4"
+                                    placeholder="لطفاً توضیحات کاملی از پروژه خودتون بدید..." required></textarea></div>
+                            <button type="submit" class="submit-btn"><span>ارسال درخواست مشاوره</span><i
+                                    class="fas fa-arrow-left"></i></button>
+                            <p class="form-note"><i class="fas fa-shield-alt"></i> اطلاعات شما نزد من کاملاً محرمانه است
+                                و در سریع‌ترین زمان ممکن پاسخگو خواهم بود</p>
+                        </form>
+                    </div>
+                </div>
+                <!-- مودال‌ها (کوتاه شده) -->
+                <div class="modal-overlay" id="projectTypeModal">
+                    <div class="modal-container">
+                        <div class="modal-header">
+                            <h3><i class="fas fa-code"></i> انتخاب نوع پروژه</h3><button class="modal-close"
+                                id="closeProjectModal"><i class="fas fa-times"></i></button>
+                        </div>
+                        <div class="modal-body">
+                            <p class="modal-desc">می‌توانید چندین گزینه را همزمان انتخاب کنید</p>
+                            <div class="modal-options"><label class="modal-checkbox-option"><input type="checkbox"
+                                        value="website" class="project-checkbox"><span class="checkmark"></span><span
+                                        class="option-text">🌐 طراحی سایت</span></label><label
+                                    class="modal-checkbox-option"><input type="checkbox" value="app"
+                                        class="project-checkbox"><span class="checkmark"></span><span
+                                        class="option-text">📱 اپلیکیشن موبایل</span></label><label
+                                    class="modal-checkbox-option"><input type="checkbox" value="ai"
+                                        class="project-checkbox"><span class="checkmark"></span><span
+                                        class="option-text">🧠 هوش مصنوعی</span></label><label
+                                    class="modal-checkbox-option"><input type="checkbox" value="seo"
+                                        class="project-checkbox"><span class="checkmark"></span><span
+                                        class="option-text">📈 سئو و بهینه‌سازی</span></label><label
+                                    class="modal-checkbox-option"><input type="checkbox" value="branding"
+                                        class="project-checkbox"><span class="checkmark"></span><span
+                                        class="option-text">🎨 هویت بصری</span></label><label
+                                    class="modal-checkbox-option"><input type="checkbox" value="consulting"
+                                        class="project-checkbox"><span class="checkmark"></span><span
+                                        class="option-text">💼 مشاوره فنی</span></label></div>
+                        </div>
+                        <div class="modal-footer"><button class="modal-btn-cancel"
+                                id="cancelProjectModal">انصراف</button><button class="modal-btn-confirm"
+                                id="confirmProjectModal">تأیید</button></div>
+                    </div>
+                </div>
+                <div class="modal-overlay" id="deadlineModal">
+                    <div class="modal-container">
+                        <div class="modal-header">
+                            <h3><i class="fas fa-clock"></i> انتخاب مدت زمان</h3><button class="modal-close"
+                                id="closeDeadlineModal"><i class="fas fa-times"></i></button>
+                        </div>
+                        <div class="modal-body">
+                            <p class="modal-desc">زمان مورد نظر خود را انتخاب کنید</p>
+                            <div class="modal-options"><label class="modal-radio-option"><input type="radio"
+                                        name="deadlineRadio" value="1month"><span class="custom-radio"></span><span
+                                        class="option-text">⏱️ کمتر از ۱ ماه</span></label><label
+                                    class="modal-radio-option"><input type="radio" name="deadlineRadio"
+                                        value="2month"><span class="custom-radio"></span><span class="option-text">⏰ ۱
+                                        تا ۲ ماه</span></label><label class="modal-radio-option"><input type="radio"
+                                        name="deadlineRadio" value="3month"><span class="custom-radio"></span><span
+                                        class="option-text">📅 ۲ تا ۳ ماه</span></label><label
+                                    class="modal-radio-option"><input type="radio" name="deadlineRadio"
+                                        value="4month"><span class="custom-radio"></span><span class="option-text">🗓️ ۳
+                                        ماه به بالا</span></label></div>
+                        </div>
+                        <div class="modal-footer"><button class="modal-btn-cancel"
+                                id="cancelDeadlineModal">انصراف</button><button class="modal-btn-confirm"
+                                id="confirmDeadlineModal">تأیید</button></div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+
+    <!-- ==================== FOOTER ==================== -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-content">
+                <!-- لوگو و نام برند -->
+                <div class="footer-brand">
+                    <div class="logo-area">
+                        <p class="logo-text">
+                            <span class="logo-bracket">&lt;</span>
+                            erfan
+                            <span class="logo-name">rahmati</span>
+                            <span class="logo-bracket">/&gt;</span>
+                        </p>
+                    </div>
+                    <p class="footer-bio">
+                        برنامه‌نویس ارشد | طراح اپلیکیشن | مدیر فنی (CTO)
+                    </p>
+                </div>
+
+                <!-- لینک‌های سریع -->
+                <div class="footer-links">
+                    <div class="footer-links-column">
+                        <h4>دسترسی سریع</h4>
+                        <ul>
+                            <li><a href="#">خانه</a></li>
+                            <li><a href="#">پروژه‌ها</a></li>
+                            <li><a href="#">درباره من</a></li>
+                            <li><a href="#">تماس با من</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-links-column">
+                        <h4>خدمات</h4>
+                        <ul>
+                            <li><a href="#">طراحی سایت</a></li>
+                            <li><a href="#">اپلیکیشن موبایل</a></li>
+                            <li><a href="#">هوش مصنوعی</a></li>
+                            <li><a href="#">سئو و بهینه‌سازی</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-links-column">
+                        <h4>قوانین</h4>
+                        <ul>
+                            <li><a href="#">حریم خصوصی</a></li>
+                            <li><a href="#">شرایط همکاری</a></li>
+                            <li><a href="#">ضمانت‌ها</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- شبکه‌های اجتماعی -->
+                <div class="footer-social">
+                    <h4>دنبال کنید</h4>
+                    <div class="social-icons-footer">
+                        <a href="https://github.com/erfanrahmati" target="_blank" class="social-icon-footer">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="https://linkedin.com/in/erfanrahmati" target="_blank" class="social-icon-footer">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="https://twitter.com/erfanrahmati" target="_blank" class="social-icon-footer">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="https://instagram.com/erfanrahmati" target="_blank" class="social-icon-footer">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- خط جداساز -->
+            <div class="footer-divider"></div>
+
+            <!-- کپی‌رایت -->
+            <div class="footer-copyright">
+                <p>&copy; ۲۰۲۵ - ۱۴۰۴ | تمامی حقوق برای <strong class="copyright-name">عرفان رحمتی</strong> محفوظ است.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+
+    <script src="assets/js/script.js"></script>
+    <script src="assets/js/aboutus.js"></script>
+</body>
+
+</html>

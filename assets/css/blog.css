@@ -1,0 +1,418 @@
+/* ========== بلاگ پیج استایل‌ها (شیشه‌ای، سبز، مدرن) ========== */
+.blog-main {
+    max-width: 1400px;
+    margin: 125px auto 0;
+    padding: 0 20px 80px;
+    direction: rtl;
+}
+
+/* هدر بلاگ */
+.blog-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.blog-header-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--glass-bg);
+    backdrop-filter: blur(8px);
+    padding: 6px 18px;
+    border-radius: 40px;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--green-primary);
+    border: 1px solid var(--glass-border);
+    margin-bottom: 20px;
+}
+
+.blog-header h1 {
+    font-size: 44px;
+    font-weight: 800;
+    margin-bottom: 16px;
+    color: var(--text-primary);
+}
+
+.blog-header h1 span {
+    color: var(--green-primary);
+}
+
+.blog-header p {
+    font-size: 18px;
+    color: var(--text-muted);
+    max-width: 700px;
+    margin: 0 auto 30px;
+}
+
+.header-search {
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.blog-search-form {
+    display: flex;
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    border-radius: 60px;
+    overflow: hidden;
+    backdrop-filter: blur(8px);
+}
+
+.blog-search-form input {
+    flex: 1;
+    padding: 14px 20px;
+    font-family: "dana-fanum-regular";
+    background: transparent;
+    border: none;
+    font-size: 14px;
+    color: var(--text-primary);
+    outline: none;
+}
+
+.blog-search-form button {
+    background: var(--green-primary);
+    border: none;
+    width: 55px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background 0.3s;
+    color: white;
+}
+
+.blog-search-form button:hover {
+    background: var(--green-dark);
+}
+
+/* چیدمان اصلی */
+.blog-layout {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+@media (min-width: 992px) {
+    .blog-layout {
+        flex-direction: row;
+    }
+
+    .blog-posts-grid {
+        flex: 2.5;
+    }
+
+    .blog-sidebar {
+        flex: 1;
+    }
+}
+
+/* شبکه مقالات (دو ستون در دسکتاپ) */
+.blog-posts-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 30px;
+}
+
+@media (min-width: 768px) {
+    .blog-posts-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* کارت مقاله */
+.post-card {
+    background: var(--glass-bg);
+    backdrop-filter: blur(12px);
+    border: 1px solid var(--glass-border);
+    border-radius: 32px;
+    overflow: hidden;
+    transition: all 0.3s;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.post-card:hover {
+    transform: translateY(-6px);
+    border-color: var(--green-primary);
+    box-shadow: 0 20px 30px -12px rgba(16, 185, 129, 0.2);
+}
+
+.post-link {
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.post-image {
+    position: relative;
+    overflow: hidden;
+    margin: 0;
+}
+
+.post-image img {
+    width: 100%;
+    aspect-ratio: 16/9;
+    object-fit: cover;
+    transition: transform 0.4s;
+}
+
+.post-card:hover .post-image img {
+    transform: scale(1.05);
+}
+
+.post-category {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    background: var(--green-primary);
+    padding: 5px 12px;
+    border-radius: 40px;
+    font-size: 12px;
+    font-weight: 600;
+    color: white;
+}
+
+.post-content {
+    padding: 24px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.post-meta {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 12px;
+    font-size: 13px;
+    color: var(--text-muted);
+}
+
+.post-meta i {
+    margin-left: 5px;
+}
+
+.post-content h2 {
+    font-size: 22px;
+    font-weight: 800;
+    line-height: 1.4;
+    margin-bottom: 12px;
+    color: var(--text-primary);
+}
+
+.post-content p {
+    font-size: 15px;
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.post-footer {
+    margin-top: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.read-more {
+    font-weight: 600;
+    color: var(--green-primary);
+    transition: gap 0.3s;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.post-card:hover .read-more {
+    gap: 10px;
+}
+
+.post-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.post-tags span {
+    background: var(--bg-card);
+    padding: 4px 10px;
+    border-radius: 30px;
+    font-size: 11px;
+    color: var(--text-muted);
+}
+
+/* سایدبار */
+.blog-sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.sidebar-widget {
+    background: var(--glass-bg);
+    backdrop-filter: blur(12px);
+    border: 1px solid var(--glass-border);
+    border-radius: 28px;
+    padding: 25px;
+}
+
+.sidebar-widget h3 {
+    font-size: 20px;
+    font-weight: 800;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    border-right: 3px solid var(--green-primary);
+    padding-right: 12px;
+    color: var(--text-primary);
+}
+
+.search-widget form {
+    display: flex;
+    background: var(--bg-card);
+    border-radius: 60px;
+    overflow: hidden;
+    border: 1px solid var(--border-light);
+}
+
+.search-widget input {
+    flex: 1;
+    padding: 12px 18px;
+    background: transparent;
+    font-family: "dana-fanum-regular";
+    border: none;
+    outline: none;
+    color: var(--text-primary);
+}
+
+.search-widget button {
+    background: var(--green-primary);
+    font-family: "dana-fanum-regular";
+    border: none;
+    padding: 0 20px;
+    color: white;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background 0.3s;
+}
+
+.search-widget button:hover {
+    background: var(--green-dark);
+}
+
+.categories-widget ul,
+.recent-posts-widget ul {
+    list-style: none;
+    padding: 0;
+}
+
+.categories-widget li,
+.recent-posts-widget li {
+    margin-bottom: 12px;
+    border-bottom: 1px solid var(--border-light);
+    padding-bottom: 8px;
+}
+
+.categories-widget a {
+    display: flex;
+    justify-content: space-between;
+    text-decoration: none;
+    color: var(--text-secondary);
+    transition: color 0.3s;
+}
+
+.categories-widget a:hover {
+    color: var(--green-primary);
+}
+
+.recent-posts-widget a {
+    display: block;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 5px;
+    text-decoration: none;
+}
+
+.recent-posts-widget a:hover {
+    color: var(--green-primary);
+}
+
+.recent-date {
+    font-size: 12px;
+    color: var(--text-muted);
+    display: block;
+}
+
+.tag-cloud {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.newsletter-widget p {
+    font-size: 14px;
+    color: var(--text-muted);
+    margin-bottom: 18px;
+}
+
+.newsletter-form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.newsletter-form input {
+    background: var(--bg-card);
+    border: 1px solid var(--border-light);
+    font-family: "dana-fanum-regular";
+    padding: 12px 16px;
+    border-radius: 60px;
+    color: var(--text-primary);
+    outline: none;
+}
+
+.newsletter-form button {
+    background: var(--green-primary);
+    font-family: "dana-fanum-regular";
+    border: none;
+    padding: 12px;
+    border-radius: 60px;
+    font-weight: 600;
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.newsletter-form button:hover {
+    background: var(--green-dark);
+    gap: 12px;
+}
+
+/* ریسپانسیو موبایل */
+@media (max-width: 768px) {
+    .blog-main {
+        padding: 0 16px 60px;
+    }
+
+    .blog-header h1 {
+        font-size: 28px;
+    }
+
+    .post-content h2 {
+        font-size: 18px;
+    }
+
+    .sidebar-widget {
+        padding: 20px;
+    }
+}

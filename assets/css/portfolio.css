@@ -1,0 +1,297 @@
+/* ----- صفحه نمونه کارها (طراحی متمایز از سایر صفحات) ----- */
+.portfolio-page {
+    max-width: 1400px;
+    margin: 125px auto 0;
+    padding: 0 20px 80px;
+    direction: rtl;
+}
+
+/* هدر */
+.portfolio-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.portfolio-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--glass-bg);
+    backdrop-filter: blur(8px);
+    padding: 6px 18px;
+    border-radius: 40px;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--green-primary);
+    border: 1px solid var(--glass-border);
+    margin-bottom: 20px;
+}
+
+.portfolio-header h1 {
+    font-size: 44px;
+    font-weight: 800;
+    color: var(--text-primary);
+    margin-bottom: 16px;
+}
+
+.portfolio-header h1 span {
+    color: var(--green-primary);
+}
+
+.portfolio-header p {
+    font-size: 18px;
+    color: var(--text-muted);
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+/* فیلتر دکمه‌ها */
+.portfolio-filters {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-bottom: 50px;
+}
+
+.filter-btn {
+    background: var(--glass-bg);
+    backdrop-filter: blur(8px);
+    border: 1px solid var(--glass-border);
+    font-family: "dana-fanum-regular";
+    padding: 10px 24px;
+    border-radius: 40px;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--text-secondary);
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.filter-btn.active,
+.filter-btn:hover {
+    background: var(--green-primary);
+    border-color: var(--green-primary);
+    color: white;
+    transform: translateY(-2px);
+}
+
+/* گالری موزاییکی (چیدمان خلاقانه با ارتفاع متفاوت) */
+.portfolio-masonry {
+    column-count: 3;
+    column-gap: 25px;
+    margin-bottom: 60px;
+}
+
+.portfolio-item {
+    break-inside: avoid;
+    margin-bottom: 25px;
+    transition: all 0.4s;
+}
+
+.portfolio-item.hidden {
+    display: none;
+}
+
+.portfolio-item-inner {
+    background: var(--glass-bg);
+    backdrop-filter: blur(12px);
+    border: 1px solid var(--glass-border);
+    border-radius: 32px;
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.portfolio-item-inner:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 25px 40px -15px rgba(16, 185, 129, 0.3);
+    border-color: var(--green-primary);
+}
+
+.portfolio-image {
+    position: relative;
+    overflow: hidden;
+    height: auto !important;
+}
+
+.portfolio-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.5s;
+}
+
+.portfolio-item-inner:hover .portfolio-image img {
+    transform: scale(1.05);
+}
+
+.portfolio-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(16, 185, 129, 0.95), rgba(5, 150, 105, 0.95));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s;
+    backdrop-filter: blur(4px);
+}
+
+.portfolio-item-inner:hover .portfolio-overlay {
+    opacity: 1;
+}
+
+.portfolio-overlay-content {
+    text-align: center;
+    padding: 20px;
+    color: white;
+    transform: translateY(20px);
+    transition: transform 0.3s;
+}
+
+.portfolio-item-inner:hover .portfolio-overlay-content {
+    transform: translateY(0);
+}
+
+.portfolio-overlay-content h3 {
+    font-size: 20px;
+    font-weight: 800;
+    margin-bottom: 10px;
+}
+
+.portfolio-overlay-content p {
+    font-size: 13px;
+    line-height: 24px;
+    margin-bottom: 15px;
+}
+
+.portfolio-tech {
+    display: inline-block;
+    background: rgba(255, 255, 255, 0.2);
+    padding: 5px 12px;
+    border-radius: 30px;
+    font-size: 11px;
+    margin-bottom: 15px;
+}
+
+.portfolio-link {
+    width: 100%;
+    max-width: 225px;
+    align-items: center;
+    gap: 6px;
+    background: white;
+    color: var(--green-primary);
+    padding: 8px 20px;
+    border-radius: 40px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 13px;
+    transition: gap 0.3s;
+}
+
+.portfolio-link:hover {
+    gap: 12px;
+}
+
+.link-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* CTA پایین صفحه */
+.portfolio-cta {
+    background: linear-gradient(135deg, var(--green-dark), var(--green-primary));
+    border-radius: 48px;
+    text-align: center;
+    padding: 50px 30px;
+}
+
+.cta-inner h3 {
+    font-size: 32px;
+    font-weight: 800;
+    color: white;
+    margin-bottom: 12px;
+}
+
+.cta-inner p {
+    font-size: 16px;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 25px;
+}
+
+.cta-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    background: white;
+    color: var(--green-primary);
+    padding: 14px 32px;
+    border-radius: 60px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: all 0.3s;
+}
+
+.cta-button:hover {
+    gap: 18px;
+    transform: translateY(-3px);
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+    .portfolio-masonry {
+        column-count: 2;
+    }
+}
+
+@media (max-width: 768px) {
+    .portfolio-page {
+        padding: 0 16px 60px;
+    }
+
+    .portfolio-header h1 {
+        font-size: 28px;
+    }
+
+    .portfolio-masonry {
+        column-count: 1;
+    }
+
+    .filter-btn {
+        padding: 6px 16px;
+        font-size: 12px;
+    }
+
+    .cta-inner h3 {
+        font-size: 24px;
+    }
+
+    .portfolio-overlay-content h3 {
+        margin-bottom: 0;
+    }
+
+    .portfolio-overlay-content p {
+        margin-bottom: 5px;
+    }
+
+    .portfolio-tech {
+        margin-bottom: 5px;
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

@@ -1,0 +1,517 @@
+@font-face {
+    font-family: "Kalameh-Bold";
+    src: url('assets/fonts/Kalameh-Bold.ttf');
+}
+
+@font-face {
+    font-family: "Kalameh-Medium";
+    src: url('../fonts/Kalameh-Medium.ttf');
+}
+
+@font-face {
+    font-family: "Kalameh-SemiBold";
+    src: url('../fonts/Kalameh-SemiBold.ttf');
+}
+
+@font-face {
+    font-family: "Kalameh Regular";
+    src: url('../fonts/Kalameh\ Regular.ttf');
+}
+
+@font-face {
+    font-family: "Kalameh(FaNum)-Light";
+    src: url('../fonts/Kalameh\(FaNum\)-Light.ttf');
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ========== تغییر اصلی: مدیریت دسکتاپ و موبایل ========== */
+/* در موبایل: body همان پس‌زمینه تصویری را دارد */
+/* در دسکتاپ: body پس‌زمینه آبی ساده می‌گیرد و محتوا وسط می‌آید */
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    font-family: "Kalameh(FaNum)-Light";
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+/* کانتینر اصلی که در دسکتاپ عرض ثابت موبایل را حفظ می‌کند */
+.mobile-container-wrapper {
+    background: url(../images/bg-account.png) no-repeat center center;
+    overflow: hidden;
+    max-width: 361px;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+    border-radius: 48px;
+    height: 100%;
+    max-height: 740px;
+}
+
+/* در موبایل (عرض کمتر از 768px) */
+@media (max-width: 767px) {
+    body {
+        background-size: cover;
+        padding: 16px;
+    }
+
+    .mobile-container-wrapper {
+        max-width: 100%;
+    }
+}
+
+/* در دسکتاپ (عرض بیشتر یا مساوی 768px) */
+@media (min-width: 768px) {
+    body {
+        background: #e8f0fe;
+        /* رنگ آبی درخواستی شما */
+        padding: 40px 20px;
+    }
+
+    .mobile-container-wrapper {
+        max-width: 361px;
+        box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+        border-radius: 48px;
+    }
+}
+
+/* کارت اصلی با افکت شیشه‌ای آبی */
+.mainn-content {
+    width: 100%;
+    min-width: 385px;
+    height: 750px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.mobile-container-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.card {
+    max-width: 325px;
+    width: 100%;
+    height: 365px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background: linear-gradient(129deg, #274367ad, #1d5da78a);
+    backdrop-filter: blur(1px);
+    border-radius: 48px 48px 48px 48px;
+    padding: 15px;
+    transition: all 0.2s ease;
+    box-shadow: inset 0px 3px 8px rgb(49 99 166);
+}
+
+.box-user {
+    width: 100%;
+    background-color: #2e3192;
+    border-radius: 20px;
+    height: 75px;
+    padding: 12px;
+    flex-direction: row-reverse;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.user-icon-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #2e3192;
+}
+
+.ic-box {
+    width: 55px;
+    border: 2px solid #fff;
+    border-radius: 100%;
+    height: 55px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: inset 0px 3px 8px rgb(49 99 166);
+}
+
+.box-user-info {
+    width: 100%;
+    height: 65px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 5px;
+}
+
+.num-text-box {
+    background: #1c75bc5e;
+    width: 155px;
+    border-radius: 100px;
+}
+
+.name-text-box {
+    background: #1c75bc5e;
+    width: 155px;
+    border-radius: 100px;
+}
+
+.num-txt {
+    color: #fff;
+    padding-right: 12px;
+    font-family: "Kalameh-Medium";
+}
+
+.name-txt {
+    color: #fff;
+    padding-right: 12px;
+    font-family: "Kalameh-Medium";
+}
+
+.gem-box {
+    width: 100%;
+    margin-top: 15px;
+    display: flex;
+    height: 60px;
+    justify-content: space-between;
+    align-items: center;
+    background: #1f8dbb7d;
+    border: 2px solid #fff;
+    border-radius: 50px;
+    padding: 12px;
+}
+
+.gem-txt {
+    color: #fff;
+    font-family: "Kalameh-Medium";
+}
+
+
+.btn-box {
+    display: flex;
+    width: 100%;
+    margin-top: 15px;
+    justify-content: center;
+    align-items: center;
+}
+
+.button-group {
+    display: flex;
+    width: 100%;
+    gap: 15px;
+}
+
+.btn {
+    flex: 1;
+    border: none;
+    padding: 5px 8px;
+    border-radius: 120px;
+    font-size: 18px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    font-family: inherit;
+    backdrop-filter: blur(4px);
+}
+
+.btn-secondary {
+    background: linear-gradient(173deg, #afc7e0, #4d7ab0);
+    width: 100%;
+    height: 55px;
+    backdrop-filter: blur(8px);
+    color: white;
+    border: 1.5px solid rgb(233 233 234);
+}
+
+.btn-secondary:active {
+    transform: scale(0.97);
+    background: linear-gradient(173deg, #afc7e0, #4d7ab0);
+}
+
+.lb-fild {
+    width: 100%;
+    color: #ffffff;
+    font-size: 22px;
+    margin-right: 12px;
+}
+
+/* فیلد کد معرف */
+.code-field {
+    background: rgb(93 143 193 / 68%);
+    backdrop-filter: blur(4px);
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    border-radius: 100px;
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    padding: 2px 20px;
+    gap: 8px;
+}
+
+.code-field i {
+    color: white;
+    font-size: 18px;
+    opacity: 0.9;
+}
+
+.code-field input {
+    flex: 1;
+    direction: rtl;
+    background: transparent;
+    border: none;
+    padding: 14px 0;
+    color: white;
+    font-size: 16px;
+    outline: none;
+}
+
+.code-field input::placeholder {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+
+/* عنوان */
+.title {
+    font-size: 32px;
+    margin-top: 35px;
+    margin-bottom: 15px;
+    font-family: "Kalameh-Medium";
+    font-weight: 800;
+    text-align: center;
+    color: white;
+    letter-spacing: -0.5px;
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    text-shadow: 0 1px 0px rgba(0, 0, 0, 0.2);
+}
+
+/* گروه فیلدها */
+.field-group {
+    margin-bottom: 28px;
+}
+
+.field-label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 15px;
+    font-weight: 600;
+    color: #e0f0ff;
+    margin-bottom: 8px;
+    padding-right: 8px;
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+}
+
+/* آیکون پایین (هماهنگ با تم آبی) */
+.icon-footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 26px;
+    margin-bottom: 8px;
+}
+
+.brand-icon {
+    height: 385px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+input {
+    font-family: inherit;
+}
+
+@media (max-width: 450px) {
+    .mobile-container-wrapper {
+        background: url(../images/bg-account.png) no-repeat center center;
+        width: 100%;
+        box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+        border-radius: 48px;
+        height: 100%;
+        box-shadow: none;
+    }
+
+    .nav-box {
+        width: 100% !important;
+    }
+
+    svg {
+        width: 500px !important;
+        margin-right: -25px !important;
+        margin-bottom: -75px !important;
+    }
+
+    .right-btn {
+        margin-bottom: -5px !important;
+        margin-right: 280px !important;
+    }
+
+    .left-btn {
+            margin-bottom: -5px !important;
+    }
+
+    .center-btn {
+        margin-top: 0px !important;
+        margin-right: 175px !important;
+    }
+
+    .card {
+        padding: 15px;
+        margin-bottom: 105px;
+
+    }
+
+    .mainn-content {
+        gap: 15px;
+    }
+
+    .title {
+        font-size: 28px;
+    }
+
+    .btn {
+        font-size: 15px;
+        padding: 12px 8px;
+    }
+
+    .brand-icon img {
+        width: 100%;
+        max-width: 385px;
+    }
+}
+
+.nav-box {
+    width: 355px;
+    display: flex;
+    flex-direction: column;
+}
+
+svg {
+    width: 395px;
+    margin-right: -13px;
+    margin-bottom: -18px;
+}
+
+/* بک‌گراند منحنی */
+.nav-bg {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 110px;
+}
+
+/* دکمه وسط */
+.center-btn {
+    position: absolute;
+    font-family: "Kalameh-Bold";
+    border: 2px solid #fff;
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(#ffb03a, #ff7b00);
+    border-radius: 50%;
+    margin-right: 137px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-weight: bold;
+    font-size: 22px;
+    z-index: 10;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+    margin-top: -15px;
+}
+
+.center-btn:active {
+    transform: scale(0.97);
+    background: linear-gradient(173deg, #afc7e0, #4d7ab0);
+}
+
+/* ظرف دکمه‌های چپ و راست */
+.nav-buttons {
+    width: 100%;
+    padding: 0 20px 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 5;
+}
+
+/* استایل دکمه‌های کناری */
+.nav-btn {
+    padding: 8px;
+    border-radius: 50px;
+    border: none;
+    color: white;
+    font-size: 16px;
+    font-weight: 600;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.25);
+    cursor: pointer;
+}
+
+.left-btn {
+    width: 124px;
+    border: 1.5px solid #fff;
+    font-family: "Kalameh-Medium";
+    background: linear-gradient(#23d5b4, #0dbd94);
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+    margin-bottom: 65px;
+    margin-right: -14px;
+}
+
+.left-btn:active {
+    transform: scale(0.97);
+    background: linear-gradient(173deg, #afc7e0, #4d7ab0);
+}
+
+.right-btn {
+    width: 124px;
+    background: linear-gradient(#2783c7, #0d5fa5);
+    border: 1.5px solid #fff;
+    font-family: "Kalameh-Medium";
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+    margin-bottom: 65px;
+    margin-right: 205px;
+}
+
+.right-btn:active {
+    transform: scale(0.97);
+    background: linear-gradient(173deg, #afc7e0, #4d7ab0);
+}
+
+/* ریسپانسیو */
+@media (max-width: 380px) {
+    .nav-btn {
+        padding: 10px 20px;
+        font-size: 14px;
+    }
+
+    .center-btn {
+        width: 70px;
+        height: 70px;
+        font-size: 18px;
+        top: -20px;
+    }
+}

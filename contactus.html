@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>عرفان رحمتی | برنامه‌نویس و طراح سایت</title>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="assets/css/all.min.css">
+    <!-- Style Link File -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/contactus.css">
+    <!-- Alpine.js -->
+    <script defer src="assets/js/cdn.min.js"></script>
+</head>
+
+<body>
+
+    <!-- ==================== HEADER WITH BRACKET LOGO & HAMBURGER MENU ==================== -->
+    <header class="header">
+        <div class="logo-area">
+            <p class="logo-text">
+                <span class="logo-bracket">&lt;</span>
+                erfan
+                <span class="logo-name">rahmati</span>
+                <span class="logo-bracket">/&gt;</span>
+            </p>
+        </div>
+
+        <!-- منوی دسکتاپ -->
+        <div class="nav-menu desktop-menu">
+            <a href="index.html" class="nav-link">خانه<div class="nav-underline"></div></a>
+            <a href="services.html" class="nav-link">خدمات<div class="nav-underline"></div></a>
+            <a href="aboutus.html" class="nav-link">درباره من<div class="nav-underline"></div></a>
+            <a href="portfolio.html" class="nav-link">نمونه کارها<div class="nav-underline"></div></a>
+            <a href="contactus.html" class="nav-link">تماس با من<div class="nav-underline"></div></a>
+            <a href="blog.html" class="nav-link">وبلاگ من<div class="nav-underline"></div></a>
+        </div>
+
+        <!-- دکمه‌های سمت چپ دسکتاپ -->
+        <div class="actions-area desktop-actions">
+            <button id="themeToggle" class="theme-btn">
+                <i id="themeIcon" class="fas fa-moon"></i>
+            </button>
+            <a href="ai-assistant.html" class="btn-smart"><i class="fas fa-robot"></i> منشی هوشمند</a>
+            <a href="#" class="btn-outline">درخواست همکاری</a>
+        </div>
+
+        <!-- دکمه همبرگری (فقط در موبایل و تبلت) -->
+        <div class="hamburger-menu" id="hamburgerBtn">
+            <div class="hamburger-line"></div>
+            <div class="hamburger-line"></div>
+            <div class="hamburger-line"></div>
+        </div>
+    </header>
+
+    <!-- منوی موبایل (اسلاید از راست) -->
+    <div class="mobile-nav" id="mobileNav">
+        <div class="mobile-nav-header">
+            <div class="mobile-logo">
+                <span class="mobile-logo-bracket">&lt;</span>
+                erfan
+                <span class="mobile-logo-name">rahmati</span>
+                <span class="mobile-logo-bracket">/&gt;</span>
+            </div>
+            <button class="mobile-nav-close" id="closeMobileNav">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div class="mobile-nav-links">
+            <a href="index.html" class="mobile-nav-link">خانه</a>
+            <a href="services.html" class="mobile-nav-link">خدمات</a>
+            <a href="aboutus.html" class="mobile-nav-link">درباره من</a>
+            <a href="portfolio.html" class="mobile-nav-link">نمونه کارها</a>
+            <a href="contactus.html" class="mobile-nav-link">تماس با من</a>
+            <a href="blog.html" class="mobile-nav-link">وبلاگ من</a>
+        </div>
+        <div class="mobile-nav-actions">
+            <button id="mobileThemeToggle" class="mobile-theme-btn">
+                <i id="mobileThemeIcon" class="fas fa-moon"></i>
+                <span>تغییر تم</span>
+            </button>
+            <a href="ai-assistant.html" class="mobile-btn-smart"><i class="fas fa-robot"></i> منشی هوشمند</a>
+            <a href="#" class="mobile-btn-outline">درخواست همکاری</a>
+        </div>
+    </div>
+
+    <!-- اوورلی (پشت منوی موبایل) -->
+    <div class="mobile-overlay" id="mobileOverlay"></div>
+
+
+    <!-- ==================== CONTACT PAGE CONTENT (عرفان رحمتی) ==================== -->
+    <main class="contact-page-custom">
+        <!-- ========== هدر صفحه تماس ========== -->
+        <section class="contact-hero">
+            <div class="contact-hero-badge">
+                <i class="fas fa-headset"></i>
+                <span>پشتیبانی ۲۴ ساعته</span>
+            </div>
+            <h1>تماس <span>با من</span></h1>
+            <p>همیشه آماده پاسخگویی به سوالات و درخواست‌های شما هستم. از طریق راه‌های ارتباطی زیر با من در تماس باشید.
+            </p>
+        </section>
+
+        <!-- ========== کارت‌های اطلاعات تماس ========== -->
+        <div class="contact-info-grid">
+            <div class="contact-info-card">
+                <div class="contact-info-icon"><i class="fas fa-phone-alt"></i></div>
+                <h3>تماس تلفنی</h3>
+                <p>پاسخگویی روزهای شنبه تا چهارشنبه<br>ساعت ۹ تا ۱۷</p>
+                <a href="tel:+989123456789">۰۹۱۲۳۴۵۶۷۸۹ <i class="fas fa-arrow-left"></i></a>
+            </div>
+            <div class="contact-info-card">
+                <div class="contact-info-icon"><i class="fas fa-envelope"></i></div>
+                <h3>ایمیل</h3>
+                <p>ارسال درخواست‌ها و مستندات پروژه</p>
+                <a href="mailto:erfan@rahmati.dev">erfan@rahmati.dev <i class="fas fa-arrow-left"></i></a>
+            </div>
+            <div class="contact-info-card">
+                <div class="contact-info-icon"><i class="fab fa-whatsapp"></i></div>
+                <h3>واتساپ</h3>
+                <p>پاسخگویی فوری ۲۴ ساعته</p>
+                <a href="https://wa.me/989123456789">ارسال پیام <i class="fas fa-arrow-left"></i></a>
+            </div>
+            <div class="contact-info-card">
+                <div class="contact-info-icon"><i class="fab fa-telegram"></i></div>
+                <h3>تلگرام</h3>
+                <p>ارسال سریع پیام و مستندات</p>
+                <a href="https://t.me/erfanrahmati">@erfanrahmati <i class="fas fa-arrow-left"></i></a>
+            </div>
+        </div>
+
+        <!-- ========== فرم تماس و اطلاعات جانبی ========== -->
+        <div class="contact-main">
+            <div class="contact-form-box">
+                <h3 class="section-title">ارسال پیام</h3>
+                <form id="contactFormPage">
+                    <div class="form-group">
+                        <label><i class="fas fa-user"></i> نام و نام خانوادگی</label>
+                        <input type="text" id="contactName" placeholder="مثال: عرفان رحمتی" required>
+                    </div>
+                    <div class="form-group">
+                        <label><i class="fas fa-envelope"></i> ایمیل</label>
+                        <input type="email" id="contactEmail" placeholder="example@domain.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label><i class="fas fa-phone-alt"></i> شماره تماس</label>
+                        <input type="tel" id="contactPhone" placeholder="۰۹۱۲۳۴۵۶۷۸۹" required>
+                    </div>
+                    <div class="form-group">
+                        <label><i class="fas fa-tag"></i> موضوع پیام</label>
+                        <select id="contactSubject">
+                            <option value="consulting">مشاوره پروژه</option>
+                            <option value="cooperation">درخواست همکاری</option>
+                            <option value="support">پشتیبانی</option>
+                            <option value="other">سایر موارد</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label><i class="fas fa-align-right"></i> متن پیام</label>
+                        <textarea id="contactMessage" placeholder="لطفاً پیام خود را بنویسید..." required></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn">
+                        <span>ارسال پیام</span>
+                        <i class="fas fa-arrow-left"></i>
+                    </button>
+                </form>
+            </div>
+
+            <!-- ========== اطلاعات تماس مستقیم (با ساختار آدرس ما) ========== -->
+            <div class="contact-map-box">
+                <h3 class="section-title">آدرس و اطلاعات تماس</h3>
+                <div class="map-placeholder">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <p>تهران، ایران<br>منطقه آنلاین – آماده همکاری حضوری با هماهنگی قبلی</p>
+                </div>
+                <div class="address-box">
+                    <i class="fas fa-building"></i>
+                    <div>
+                        <p><strong>ساعات کاری:</strong> شنبه تا چهارشنبه ۹:۰۰ - ۱۷:۰۰</p>
+                        <p><strong>پشتیبانی آنلاین:</strong> ۲۴ ساعته از طریق واتساپ و تلگرام</p>
+                    </div>
+                </div>
+                <div class="address-box">
+                    <i class="fas fa-clock"></i>
+                    <div>
+                        <p><strong>پاسخگویی تلفنی:</strong> روزهای کاری ۱۰:۰۰ - ۱۶:۰۰</p>
+                        <p><strong>مشاوره رایگان:</strong> با هماهنگی قبلی</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ========== سوالات متداول تماس (با ساختار و ظاهر دلخواه شما) ========== -->
+        <section class="contact-faq">
+            <h2>سوالات <span>متداول</span></h2>
+            <p>پاسخ به سوالات رایج شما</p>
+            <div class="contact-faq-grid">
+                <div class="faq-item-contact">
+                    <h4>چگونه می‌توانم مشاوره رایگان دریافت کنم؟</h4>
+                    <p>کافی است از طریق فرم تماس، واتساپ یا تلفن با من در ارتباط باشید تا در اسرع وقت پاسخگو باشم.</p>
+                </div>
+                <div class="faq-item-contact">
+                    <h4>زمان پاسخگویی به درخواست‌ها چقدر است؟</h4>
+                    <p>تمامی درخواست‌ها حداکثر ظرف ۲۴ ساعت کاری پاسخ داده می‌شوند. درخواست‌های فوری از طریق واتساپ پاسخ
+                        فوری دارند.</p>
+                </div>
+                <div class="faq-item-contact">
+                    <h4>آیا امکان جلسه حضوری وجود دارد؟</h4>
+                    <p>بله، پس از هماهنگی قبلی می‌توانید جلسه حضوری در تهران داشته باشید.</p>
+                </div>
+                <div class="faq-item-contact">
+                    <h4>هزینه مشاوره چقدر است؟</h4>
+                    <p>مشاوره اولیه برای تمامی پروژه‌ها به صورت کاملاً رایگان ارائه می‌شود.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+
+    <!-- ==================== FOOTER ==================== -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-content">
+                <!-- لوگو و نام برند -->
+                <div class="footer-brand">
+                    <div class="logo-area">
+                        <p class="logo-text">
+                            <span class="logo-bracket">&lt;</span>
+                            erfan
+                            <span class="logo-name">rahmati</span>
+                            <span class="logo-bracket">/&gt;</span>
+                        </p>
+                    </div>
+                    <p class="footer-bio">
+                        برنامه‌نویس ارشد | طراح اپلیکیشن | مدیر فنی (CTO)
+                    </p>
+                </div>
+
+                <!-- لینک‌های سریع -->
+                <div class="footer-links">
+                    <div class="footer-links-column">
+                        <h4>دسترسی سریع</h4>
+                        <ul>
+                            <li><a href="#">خانه</a></li>
+                            <li><a href="#">پروژه‌ها</a></li>
+                            <li><a href="#">درباره من</a></li>
+                            <li><a href="#">تماس با من</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-links-column">
+                        <h4>خدمات</h4>
+                        <ul>
+                            <li><a href="#">طراحی سایت</a></li>
+                            <li><a href="#">اپلیکیشن موبایل</a></li>
+                            <li><a href="#">هوش مصنوعی</a></li>
+                            <li><a href="#">سئو و بهینه‌سازی</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-links-column">
+                        <h4>قوانین</h4>
+                        <ul>
+                            <li><a href="#">حریم خصوصی</a></li>
+                            <li><a href="#">شرایط همکاری</a></li>
+                            <li><a href="#">ضمانت‌ها</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- شبکه‌های اجتماعی -->
+                <div class="footer-social">
+                    <h4>دنبال کنید</h4>
+                    <div class="social-icons-footer">
+                        <a href="https://github.com/erfanrahmati" target="_blank" class="social-icon-footer">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="https://linkedin.com/in/erfanrahmati" target="_blank" class="social-icon-footer">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="https://twitter.com/erfanrahmati" target="_blank" class="social-icon-footer">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="https://instagram.com/erfanrahmati" target="_blank" class="social-icon-footer">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- خط جداساز -->
+            <div class="footer-divider"></div>
+
+            <!-- کپی‌رایت -->
+            <div class="footer-copyright">
+                <p>&copy; ۲۰۲۵ - ۱۴۰۴ | تمامی حقوق برای <strong class="copyright-name">عرفان رحمتی</strong> محفوظ است.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+
+    <script src="assets/js/script.js"></script>
+    <script src="assets/js/contactus.js"></script>
+</body>
+
+</html>

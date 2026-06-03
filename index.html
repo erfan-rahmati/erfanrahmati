@@ -1,0 +1,1804 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>عرفان رحمتی | برنامه‌نویس و طراح سایت</title>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="assets/css/all.min.css">
+    <!-- Style Link File -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <!-- Alpine.js -->
+    <script defer src="assets/js/cdn.min.js"></script>
+</head>
+
+<body>
+    <!-- ==================== HEADER WITH BRACKET LOGO & HAMBURGER MENU ==================== -->
+    <header class="header">
+        <div class="logo-area">
+            <p class="logo-text">
+                <span class="logo-bracket">&lt;</span>
+                erfan
+                <span class="logo-name">rahmati</span>
+                <span class="logo-bracket">/&gt;</span>
+            </p>
+        </div>
+
+        <!-- منوی دسکتاپ -->
+        <div class="nav-menu desktop-menu">
+            <a href="index.html" class="nav-link">خانه<div class="nav-underline"></div></a>
+            <a href="services.html" class="nav-link">خدمات<div class="nav-underline"></div></a>
+            <a href="aboutus.html" class="nav-link">درباره من<div class="nav-underline"></div></a>
+            <a href="portfolio.html" class="nav-link">نمونه کارها<div class="nav-underline"></div></a>
+            <a href="contactus.html" class="nav-link">تماس با من<div class="nav-underline"></div></a>
+            <a href="blog.html" class="nav-link">وبلاگ من<div class="nav-underline"></div></a>
+        </div>
+
+        <!-- دکمه‌های سمت چپ دسکتاپ -->
+        <div class="actions-area desktop-actions">
+            <button id="themeToggle" class="theme-btn">
+                <i id="themeIcon" class="fas fa-moon"></i>
+            </button>
+            <a href="ai-assistant.html" class="btn-smart"><i class="fas fa-robot"></i> منشی هوشمند</a>
+            <a href="#" class="btn-outline">درخواست همکاری</a>
+        </div>
+
+        <!-- دکمه همبرگری (فقط در موبایل و تبلت) -->
+        <div class="hamburger-menu" id="hamburgerBtn">
+            <div class="hamburger-line"></div>
+            <div class="hamburger-line"></div>
+            <div class="hamburger-line"></div>
+        </div>
+    </header>
+
+    <!-- منوی موبایل (اسلاید از راست) -->
+    <div class="mobile-nav" id="mobileNav">
+        <div class="mobile-nav-header">
+            <div class="mobile-logo">
+                <span class="mobile-logo-bracket">&lt;</span>
+                erfan
+                <span class="mobile-logo-name">rahmati</span>
+                <span class="mobile-logo-bracket">/&gt;</span>
+            </div>
+            <button class="mobile-nav-close" id="closeMobileNav">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div class="mobile-nav-links">
+            <a href="index.html" class="mobile-nav-link">خانه</a>
+            <a href="services.html" class="mobile-nav-link">خدمات</a>
+            <a href="aboutus.html" class="mobile-nav-link">درباره من</a>
+            <a href="portfolio.html" class="mobile-nav-link">نمونه کارها</a>
+            <a href="contactus.html" class="mobile-nav-link">تماس با من</a>
+            <a href="blog.html" class="mobile-nav-link">وبلاگ من</a>
+        </div>
+        <div class="mobile-nav-actions">
+            <button id="mobileThemeToggle" class="mobile-theme-btn">
+                <i id="mobileThemeIcon" class="fas fa-moon"></i>
+                <span>تغییر تم</span>
+            </button>
+            <a href="ai-assistant.html" class="mobile-btn-smart"><i class="fas fa-robot"></i> منشی هوشمند</a>
+            <a href="#" class="mobile-btn-outline">درخواست همکاری</a>
+        </div>
+    </div>
+
+    <!-- اوورلی (پشت منوی موبایل) -->
+    <div class="mobile-overlay" id="mobileOverlay"></div>
+
+    <!-- ==================== HERO SECTION ==================== -->
+    <div class="hero-container" x-data="{
+        sentences: ['برنامه‌نویس ارشد', 'طراح اپلیکیشن موبایل', 'مدیر فنی (CTO)', 'متخصص هوش مصنوعی', 'معمار نرم‌افزار', 'طراح UI/UX'],
+        currentSentenceIndex: 0,
+        currentCharIndex: 0,
+        isTyping: true,
+        text: '',
+        init() { this.typeSentence(); },
+        typeSentence() {
+            const sentence = this.sentences[this.currentSentenceIndex];
+            if (this.currentCharIndex < sentence.length) {
+                this.text += sentence.charAt(this.currentCharIndex);
+                this.currentCharIndex++;
+                setTimeout(this.typeSentence.bind(this), 100);
+            } else {
+                this.isTyping = false;
+                setTimeout(this.deleteSentence.bind(this), 1500);
+            }
+        },
+        deleteSentence() {
+            if (this.text.length > 0) {
+                this.text = this.text.slice(0, -1);
+                this.currentCharIndex--;
+                setTimeout(this.deleteSentence.bind(this), 50);
+            } else {
+                this.isTyping = true;
+                this.currentSentenceIndex = (this.currentSentenceIndex + 1) % this.sentences.length;
+                setTimeout(this.typeSentence.bind(this), 500);
+            }
+        }
+    }">
+        <!-- سمت راست: محتوای متنی -->
+        <div class="hero-content">
+            <h1 class="hero-title">عرفان <span class="hero-highlight">رحمتی</span></h1>
+            <p class="hero-typed">
+                یک <span class="typed-text" x-text="text"></span><span class="cursor-blink">_</span>
+            </p>
+            <p class="hero-description">
+                من به کسب‌وکارها کمک می‌کنم تا با <strong class="tech-badge">طراحی سایت حرفه‌ای</strong>،
+                <strong class="tech-badge">اپلیکیشن موبایل</strong> و
+                <strong class="tech-badge">هوش مصنوعی</strong>
+                تحول دیجیتال را تجربه کنند. با بیش از ۵ سال سابقه به عنوان مدیر فنی (CTO) در شرکت‌های معتبر.
+            </p>
+            <div class="btn-group">
+                <a href="#" class="btn-primary">
+                    <span>مشاهده پروژه‌های من</span>
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        style="transform: rotate(180deg);">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+                    </svg>
+                </a>
+                <div class="social-icons">
+                    <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-github"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-telegram"></i></a>
+                </div>
+            </div>
+        </div>
+
+        <!-- سمت چپ: ویدیو با برچسب‌های شیشه‌ای روی آن -->
+        <div class="hero-visual">
+            <div class="video-wrapper">
+                <!-- برچسب‌های شیشه‌ای که روی ویدیو قرار می‌گیرند -->
+                <div class="floating-badge badge-1 animation-ip-down-700">
+                    <i class="fab fa-html5"></i> HTML,CSS
+                </div>
+                <div class="floating-badge badge-2 animation-ip-down-500">
+                    <i class="fab fa-react"></i> React
+                </div>
+                <div class="floating-badge badge-3 animation-ip-down-300">
+                    <i class="fab fa-flutter"></i> Flutter
+                </div>
+                <div class="floating-badge badge-4 animation-ip-down-600">
+                    <i class="fas fa-brain"></i> AI
+                </div>
+
+                <!-- ویدیو با ابعاد 400x400 -->
+                <video class="hero-video" autoplay muted loop playsinline>
+                    <source src="assets/Video/video-1.mp4" type="video/mp4">
+                </video>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==================== BACK TO TOP BUTTON (FLOATING - LEFT SIDE) ==================== -->
+    <button id="backToTop" class="back-to-top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- ==================== ABOUT & SKILLS SECTION ==================== -->
+    <section class="about-section">
+        <div class="about-container">
+            <div class="about-grid">
+                <!-- ستون راست: درباره من + سوابق -->
+                <div class="about-content">
+                    <div class="glass-card">
+                        <h2 class="section-title-text"><i class="fas fa-user-astronaut"></i> درباره من</h2>
+                        <p class="about-text">
+                            من <strong class="text-green">عرفان رحمتی</strong> هستم، با بیش از <strong
+                                class="text-green">۵ سال تجربه</strong> در زمینه
+                            توسعه نرم‌افزار، طراحی سایت و اپلیکیشن. به عنوان <strong class="text-green">مدیر فنی
+                                (CTO)</strong> در شرکت‌های معتبری
+                            مانند <strong class="text-green">پیکس‌شو</strong> و <strong class="text-green">هوشمندسازان
+                                فرامرزی</strong>، مسئولیت معماری،
+                            پیاده‌سازی و هدایت تیم‌های فنی را بر عهده داشته‌ام.
+                        </p>
+                        <p class="about-text">
+                            اعتقاد من این است که <strong class="text-green">کد تمیز و معماری اصولی</strong>، پایه‌های یک
+                            محصول دیجیتال موفق هستند.
+                            هدف من ساختن پلتفرم‌هایی است که نه تنها نیاز امروز کسب‌وکارها را برطرف کنند، بلکه برای رشد
+                            آینده نیز مقیاس‌پذیر باشند.
+                        </p>
+
+                        <h2 class="section-title-text mt-35"><i class="fas fa-briefcase"></i> سوابق حرفه‌ای</h2>
+
+                        <div class="timeline">
+                            <div class="timeline-item">
+                                <div class="timeline-dot"></div>
+                                <div class="timeline-content">
+                                    <span class="timeline-date">۱۴۰۳ - اکنون</span>
+                                    <h3 class="timeline-title">مدیر فنی (CTO) - پیکس‌شو</h3>
+                                    <p class="timeline-desc">مدیریت تیم فنی، معماری سیستم، پیاده‌سازی زیرساخت ابری.</p>
+                                </div>
+                            </div>
+                            <div class="timeline-item">
+                                <div class="timeline-dot"></div>
+                                <div class="timeline-content">
+                                    <span class="timeline-date">۱۴۰۱ - ۱۴۰۳</span>
+                                    <h3 class="timeline-title">مدیر IT - هوشمندسازان فرامرزی</h3>
+                                    <p class="timeline-desc">رهبری تیم برنامه‌نویسی، طراحی اپلیکیشن‌های موبایل و وب.</p>
+                                </div>
+                            </div>
+                            <div class="timeline-item">
+                                <div class="timeline-dot"></div>
+                                <div class="timeline-content">
+                                    <span class="timeline-date">۱۳۹۹ - ۱۴۰۱</span>
+                                    <h3 class="timeline-title">توسعه‌دهنده ارشد - سای‌ویژن</h3>
+                                    <p class="timeline-desc">توسعه سیستم‌های هوشمند و پردازش تصویر (پروژه برنجک).</p>
+                                </div>
+                            </div>
+                            <div class="timeline-item">
+                                <div class="timeline-dot"></div>
+                                <div class="timeline-content">
+                                    <span class="timeline-date">۱۳۹۸ - ۱۳۹۹</span>
+                                    <h3 class="timeline-title">طراح اپلیکیشن - فالکون</h3>
+                                    <p class="timeline-desc">طراحی و پیاده‌سازی اپلیکیشن‌های موبایل با Flutter و Swift.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ستون چپ: ابزارهای توسعه -->
+                <div class="skills-sidebar">
+                    <div class="glass-card sticky-card">
+                        <h2 class="section-title-text"><i class="fas fa-code"></i> ابزارهای توسعه</h2>
+                        <div class="skills-grid">
+                            <span class="skill-badge"><i class="fab fa-laravel"></i> Laravel</span>
+                            <span class="skill-badge"><i class="fab fa-react"></i> React.js</span>
+                            <span class="skill-badge"><i class="fas fa-code"></i> ASP.NET</span>
+                            <span class="skill-badge"><i class="fab fa-flutter"></i> Flutter</span>
+                            <span class="skill-badge"><i class="fab fa-swift"></i> Swift</span>
+                            <span class="skill-badge"><i class="fab fa-js"></i> JavaScript</span>
+                            <span class="skill-badge"><i class="fab fa-python"></i> Python</span>
+                            <span class="skill-badge"><i class="fas fa-brain"></i> AI</span>
+                            <span class="skill-badge"><i class="fab fa-figma"></i> Figma</span>
+                            <span class="skill-badge"><i class="fab fa-git-alt"></i> Git</span>
+                        </div>
+
+                        <div class="divider"></div>
+
+                        <h2 class="section-title-text mt-20"><i class="fas fa-trophy"></i> افتخارات</h2>
+                        <div class="awards-list">
+                            <div class="award-item">
+                                <i class="fas fa-medal"></i>
+                                <span>برنده مسابقه ملی هوش مصنوعی ۱۴۰۲</span>
+                            </div>
+                            <div class="award-item">
+                                <i class="fas fa-certificate"></i>
+                                <span>گواهی تخصصی معماری نرم‌افزار از دانشگاه صنعتی شریف</span>
+                            </div>
+                            <div class="award-item">
+                                <i class="fas fa-star"></i>
+                                <span>تیم برتر کدنویسی وب‌نویس ۱۴۰۱</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== SERVICES SECTION (SPECIAL & UNIQUE) ==================== -->
+    <section class="services-special">
+        <div class="services-special-container">
+            <div class="services-header">
+                <span class="services-badge">✨ آنچه ارائه می‌دهم</span>
+                <h2 class="services-title">خدمات <span class="services-title-highlight">تخصصی</span></h2>
+                <p class="services-subtitle">راهکارهای دیجیتال سفارشی برای رشد کسب‌وکار شما</p>
+            </div>
+
+            <div class="services-grid-special">
+                <!-- سرویس ۱ -->
+                <div class="service-card-special">
+                    <div class="service-number">01</div>
+                    <div class="service-icon-special">
+                        <i class="fas fa-globe"></i>
+                    </div>
+                    <h3 class="service-title-special">طراحی سایت حرفه‌ای</h3>
+                    <p class="service-desc-special">
+                        از وب‌سایت‌های وردپرسی اقتصادی تا پلتفرم‌های اختصاصی و پیچیده با Laravel، React و ASP.NET
+                    </p>
+                    <div class="service-tags">
+                        <span>Laravel</span>
+                        <span>React</span>
+                        <span>ASP.NET</span>
+                    </div>
+                    <div class="service-link">
+                        <a href="#">مشاهده بیشتر <i class="fas fa-arrow-left"></i></a>
+                    </div>
+                </div>
+
+                <!-- سرویس ۲ -->
+                <div class="service-card-special">
+                    <div class="service-number">02</div>
+                    <div class="service-icon-special">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <h3 class="service-title-special">اپلیکیشن موبایل</h3>
+                    <p class="service-desc-special">
+                        طراحی اپلیکیشن‌های Native و Cross-Platform برای Android و iOS با Flutter و Swift
+                    </p>
+                    <div class="service-tags">
+                        <span>Flutter</span>
+                        <span>Swift</span>
+                        <span>Kotlin</span>
+                    </div>
+                    <div class="service-link">
+                        <a href="#">مشاهده بیشتر <i class="fas fa-arrow-left"></i></a>
+                    </div>
+                </div>
+
+                <!-- سرویس ۳ -->
+                <div class="service-card-special">
+                    <div class="service-number">03</div>
+                    <div class="service-icon-special">
+                        <i class="fas fa-palette"></i>
+                    </div>
+                    <h3 class="service-title-special">هویت بصری & UI/UX</h3>
+                    <p class="service-desc-special">
+                        طراحی لوگو، برندینگ و رابط کاربری مدرن با رویکرد جذب کاربر و افزایش نرخ تبدیل
+                    </p>
+                    <div class="service-tags">
+                        <span>Figma</span>
+                        <span>UI/UX</span>
+                        <span>برندینگ</span>
+                    </div>
+                    <div class="service-link">
+                        <a href="#">مشاهده بیشتر <i class="fas fa-arrow-left"></i></a>
+                    </div>
+                </div>
+
+                <!-- سرویس ۴ -->
+                <div class="service-card-special">
+                    <div class="service-number">04</div>
+                    <div class="service-icon-special">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <h3 class="service-title-special">هوش مصنوعی & پردازش تصویر</h3>
+                    <p class="service-desc-special">
+                        پیاده‌سازی پروژه‌های هوش مصنوعی، پردازش تصویر و تشخیص الگو (مانند پروژه برنجک)
+                    </p>
+                    <div class="service-tags">
+                        <span>Python</span>
+                        <span>TensorFlow</span>
+                        <span>OpenCV</span>
+                    </div>
+                    <div class="service-link">
+                        <a href="#">مشاهده بیشتر <i class="fas fa-arrow-left"></i></a>
+                    </div>
+                </div>
+
+                <!-- سرویس ۵ -->
+                <div class="service-card-special">
+                    <div class="service-number">05</div>
+                    <div class="service-icon-special">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3 class="service-title-special">مشاوره & مدیریت فنی</h3>
+                    <p class="service-desc-special">
+                        مشاوره معماری نرم‌افزار، مدیریت تیم‌های فنی و نقش CTO به صورت پروژه‌ای
+                    </p>
+                    <div class="service-tags">
+                        <span>CTO as a Service</span>
+                        <span>معماری</span>
+                        <span>مدیریت</span>
+                    </div>
+                    <div class="service-link">
+                        <a href="#">مشاهده بیشتر <i class="fas fa-arrow-left"></i></a>
+                    </div>
+                </div>
+
+                <!-- سرویس ۶ -->
+                <div class="service-card-special">
+                    <div class="service-number">06</div>
+                    <div class="service-icon-special">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <h3 class="service-title-special">سئو & بهینه‌سازی</h3>
+                    <p class="service-desc-special">
+                        بهینه‌سازی سایت برای موتورهای جستجو، افزایش سرعت و بهبود تجربه کاربری
+                    </p>
+                    <div class="service-tags">
+                        <span>SEO</span>
+                        <span>Core Web Vitals</span>
+                        <span>Speed</span>
+                    </div>
+                    <div class="service-link">
+                        <a href="#">مشاهده بیشتر <i class="fas fa-arrow-left"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== SKILLS MARQUEE (INFINITE SLIDER) ==================== -->
+    <section class="marquee-section">
+        <div class="marquee-container">
+            <div class="marquee-track">
+                <!-- اسلاید اول - تکرار برای حلقه بی‌نهایت -->
+                <div class="marquee-item">
+                    <i class="fas fa-laptop-code"></i>
+                    <span>طراحی سایت اختصاصی</span>
+                </div>
+                <div class="marquee-item">
+                    <i class="fas fa-mobile-alt"></i>
+                    <span>اپلیکیشن موبایل</span>
+                </div>
+                <div class="marquee-item">
+                    <i class="fas fa-brain"></i>
+                    <span>هوش مصنوعی</span>
+                </div>
+                <div class="marquee-item">
+                    <i class="fab fa-laravel"></i>
+                    <span>Laravel</span>
+                </div>
+                <div class="marquee-item">
+                    <i class="fab fa-react"></i>
+                    <span>React.js</span>
+                </div>
+                <div class="marquee-item">
+                    <i class="fab fa-flutter"></i>
+                    <span>Flutter</span>
+                </div>
+                <div class="marquee-item">
+                    <i class="fab fa-swift"></i>
+                    <span>Swift</span>
+                </div>
+                <div class="marquee-item">
+                    <i class="fas fa-database"></i>
+                    <span>پایگاه داده</span>
+                </div>
+                <div class="marquee-item">
+                    <i class="fab fa-figma"></i>
+                    <span>UI/UX Design</span>
+                </div>
+                <div class="marquee-item">
+                    <i class="fas fa-chart-line"></i>
+                    <span>سئو و بهینه‌سازی</span>
+                </div>
+                <div class="marquee-item">
+                    <i class="fas fa-shield-alt"></i>
+                    <span>امنیت نرم‌افزار</span>
+                </div>
+                <div class="marquee-item">
+                    <i class="fab fa-python"></i>
+                    <span>Python</span>
+                </div>
+
+                <!-- تکرار آیتم‌ها برای ایجاد حلقه بی‌نهایت یکپارچه -->
+                <div class="marquee-item">
+                    <i class="fas fa-laptop-code"></i>
+                    <span>طراحی سایت اختصاصی</span>
+                </div>
+                <div class="marquee-item">
+                    <i class="fas fa-mobile-alt"></i>
+                    <span>اپلیکیشن موبایل</span>
+                </div>
+                <div class="marquee-item">
+                    <i class="fas fa-brain"></i>
+                    <span>هوش مصنوعی</span>
+                </div>
+                <div class="marquee-item">
+                    <i class="fab fa-laravel"></i>
+                    <span>Laravel</span>
+                </div>
+                <div class="marquee-item">
+                    <i class="fab fa-react"></i>
+                    <span>React.js</span>
+                </div>
+                <div class="marquee-item">
+                    <i class="fab fa-flutter"></i>
+                    <span>Flutter</span>
+                </div>
+                <div class="marquee-item">
+                    <i class="fab fa-swift"></i>
+                    <span>Swift</span>
+                </div>
+                <div class="marquee-item">
+                    <i class="fas fa-database"></i>
+                    <span>پایگاه داده</span>
+                </div>
+                <div class="marquee-item">
+                    <i class="fab fa-figma"></i>
+                    <span>UI/UX Design</span>
+                </div>
+                <div class="marquee-item">
+                    <i class="fas fa-chart-line"></i>
+                    <span>سئو و بهینه‌سازی</span>
+                </div>
+                <div class="marquee-item">
+                    <i class="fas fa-shield-alt"></i>
+                    <span>امنیت نرم‌افزار</span>
+                </div>
+                <div class="marquee-item">
+                    <i class="fab fa-python"></i>
+                    <span>Python</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== STATS / ACHIEVEMENTS SECTION ==================== -->
+    <section class="stats-section">
+        <div class="stats-container">
+            <div class="stats-card">
+                <div class="stats-grid">
+                    <!-- آمار ۱: عضو تیم -->
+                    <div class="stat-item">
+                        <div class="stat-label">
+                            <i class="fas fa-users"></i>
+                            <span>عضو تیم</span>
+                        </div>
+                        <div class="stat-number">
+                            <span class="counter" data-target="6">0</span>
+                            <span class="stat-unit">نفر</span>
+                        </div>
+                        <div class="stat-line"></div>
+                    </div>
+
+                    <!-- آمار ۲: سال تجربه -->
+                    <div class="stat-item">
+                        <div class="stat-label">
+                            <i class="fas fa-calendar-alt"></i>
+                            <span>سال تجربه</span>
+                        </div>
+                        <div class="stat-number">
+                            <span class="counter" data-target="5">0</span>
+                            <span class="stat-unit">+ سال</span>
+                        </div>
+                        <div class="stat-line"></div>
+                    </div>
+
+                    <!-- آمار ۳: پروژه موفق -->
+                    <div class="stat-item">
+                        <div class="stat-label">
+                            <i class="fas fa-rocket"></i>
+                            <span>پروژه موفق</span>
+                        </div>
+                        <div class="stat-number">
+                            <span class="counter" data-target="20">0</span>
+                            <span class="stat-unit">+ پروژه</span>
+                        </div>
+                        <div class="stat-line"></div>
+                    </div>
+
+                    <!-- آمار ۴: رضایت مشتریان -->
+                    <div class="stat-item">
+                        <div class="stat-label">
+                            <i class="fas fa-star"></i>
+                            <span>رضایت مشتریان</span>
+                        </div>
+                        <div class="stat-number">
+                            <span class="counter" data-target="98">0</span>
+                            <span class="stat-unit">٪</span>
+                        </div>
+                        <div class="stat-line"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== FEATURES SECTION ==================== -->
+    <section class="features-section">
+        <div class="features-container">
+            <h2 class="features-title">
+                ویژگی‌های <span class="features-title-highlight">من</span>
+            </h2>
+            <p class="features-subtitle">چرا همکاری با من می‌تواند تحول دیجیتال کسب‌وکارتان را سرعت ببخشد؟</p>
+
+            <!-- ردیف اول ویژگی‌ها -->
+            <div class="features-grid">
+                <div class="feature-card fade-in">
+                    <div class="feature-icon">
+                        <i class="fas fa-dumbbell"></i>
+                    </div>
+                    <h3 class="feature-title">اراده آهنین</h3>
+                    <p class="feature-desc">تعهد کامل تا اتمام پروژه، حتی در سخت‌ترین شرایط فنی</p>
+                </div>
+
+                <div class="feature-card fade-in">
+                    <div class="feature-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <h3 class="feature-title">وقت‌شناسی حرفه‌ای</h3>
+                    <p class="feature-desc">تحویل به‌موقع پروژه‌ها و رعایت دقیق ضرب‌الاجل‌ها</p>
+                </div>
+
+                <div class="feature-card fade-in">
+                    <div class="feature-icon">
+                        <i class="fas fa-tasks"></i>
+                    </div>
+                    <h3 class="feature-title">مدیریت پروژه</h3>
+                    <p class="feature-desc">تجربه مدیریت تیم‌های فنی و اجرای متدولوژی‌های چابک</p>
+                </div>
+
+                <div class="feature-card fade-in">
+                    <div class="feature-icon">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <h3 class="feature-title">مسلط به ۸+ زبان برنامه‌نویسی</h3>
+                    <p class="feature-desc">PHP، JavaScript، Python، Dart، Swift، C#، Java، Kotlin</p>
+                </div>
+            </div>
+
+            <!-- ردیف دوم ویژگی‌ها -->
+            <div class="features-grid">
+                <div class="feature-card fade-in">
+                    <div class="feature-icon">
+                        <i class="fas fa-microchip"></i>
+                    </div>
+                    <h3 class="feature-title">معماری مدرن</h3>
+                    <p class="feature-desc">طراحی نرم‌افزارهای مقیاس‌پذیر با معماری Microservices و Clean Code</p>
+                </div>
+
+                <div class="feature-card fade-in">
+                    <div class="feature-icon">
+                        <i class="fas fa-headset"></i>
+                    </div>
+                    <h3 class="feature-title">پشتیبانی ۲۴/۷</h3>
+                    <p class="feature-desc">همراهی و پشتیبانی واقعی از کانسپت تا استقرار نهایی و پس از آن</p>
+                </div>
+
+                <div class="feature-card fade-in">
+                    <div class="feature-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3 class="feature-title">امنیت بالا</h3>
+                    <p class="feature-desc">رعایت استانداردهای امنیتی و پیاده‌سازی پروتکل‌های پیشرفته</p>
+                </div>
+
+                <div class="feature-card fade-in">
+                    <div class="feature-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3 class="feature-title">بازگشت سرمایه</h3>
+                    <p class="feature-desc">طراحی با رویکرد افزایش نرخ تبدیل و بهینه‌سازی سئو</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== CTA SECTION ==================== -->
+    <section class="cta-section">
+        <div class="cta-container">
+            <video class="cta-video" autoplay muted loop playsinline>
+                <source src="assets/Video/video-1.mp4" type="video/mp4">
+                <!-- در صورتی که ویدیو لود نشد، یک تصویر جایگزین -->
+                <img src="https://placehold.co/1920x200/10b981/white?text=Erfan+Rahmati" alt="عرفان رحمتی">
+            </video>
+            <div class="cta-overlay">
+                <div class="cta-content">
+                    <h2 class="cta-title">
+                        وقتشه کار رو بسپاری دست <span class="cta-highlight">کاردون</span>
+                    </h2>
+                    <p class="cta-subtitle">
+                        با بیش از ۵ سال تجربه مدیریت فنی، پروژه‌ات را به یک تیم حرفه‌ای بسپار
+                    </p>
+                    <a href="#" class="cta-button">
+                        <i class="fas fa-calendar-check"></i>
+                        مشاوره رایگان
+                        <i class="fas fa-arrow-left"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== SKILLS MARQUEE (INFINITE SLIDER-2) ==================== -->
+    <section class="marquee-section">
+        <div class="marquee-container">
+            <div class="marquee-track">
+                <!-- اسلاید اول - تکرار برای حلقه بی‌نهایت -->
+                <div class="marquee-item">
+                    <i class="fas fa-laptop-code"></i>
+                    <span>طراحی سایت اختصاصی</span>
+                </div>
+                <div class="marquee-item">
+                    <i class="fas fa-mobile-alt"></i>
+                    <span>اپلیکیشن موبایل</span>
+                </div>
+                <div class="marquee-item">
+                    <i class="fas fa-brain"></i>
+                    <span>هوش مصنوعی</span>
+                </div>
+                <div class="marquee-item">
+                    <i class="fab fa-laravel"></i>
+                    <span>Laravel</span>
+                </div>
+                <div class="marquee-item">
+                    <i class="fab fa-react"></i>
+                    <span>React.js</span>
+                </div>
+                <div class="marquee-item">
+                    <i class="fab fa-flutter"></i>
+                    <span>Flutter</span>
+                </div>
+                <div class="marquee-item">
+                    <i class="fab fa-swift"></i>
+                    <span>Swift</span>
+                </div>
+                <div class="marquee-item">
+                    <i class="fas fa-database"></i>
+                    <span>پایگاه داده</span>
+                </div>
+                <div class="marquee-item">
+                    <i class="fab fa-figma"></i>
+                    <span>UI/UX Design</span>
+                </div>
+                <div class="marquee-item">
+                    <i class="fas fa-chart-line"></i>
+                    <span>سئو و بهینه‌سازی</span>
+                </div>
+                <div class="marquee-item">
+                    <i class="fas fa-shield-alt"></i>
+                    <span>امنیت نرم‌افزار</span>
+                </div>
+                <div class="marquee-item">
+                    <i class="fab fa-python"></i>
+                    <span>Python</span>
+                </div>
+
+                <!-- تکرار آیتم‌ها برای ایجاد حلقه بی‌نهایت یکپارچه -->
+                <div class="marquee-item">
+                    <i class="fas fa-laptop-code"></i>
+                    <span>طراحی سایت اختصاصی</span>
+                </div>
+                <div class="marquee-item">
+                    <i class="fas fa-mobile-alt"></i>
+                    <span>اپلیکیشن موبایل</span>
+                </div>
+                <div class="marquee-item">
+                    <i class="fas fa-brain"></i>
+                    <span>هوش مصنوعی</span>
+                </div>
+                <div class="marquee-item">
+                    <i class="fab fa-laravel"></i>
+                    <span>Laravel</span>
+                </div>
+                <div class="marquee-item">
+                    <i class="fab fa-react"></i>
+                    <span>React.js</span>
+                </div>
+                <div class="marquee-item">
+                    <i class="fab fa-flutter"></i>
+                    <span>Flutter</span>
+                </div>
+                <div class="marquee-item">
+                    <i class="fab fa-swift"></i>
+                    <span>Swift</span>
+                </div>
+                <div class="marquee-item">
+                    <i class="fas fa-database"></i>
+                    <span>پایگاه داده</span>
+                </div>
+                <div class="marquee-item">
+                    <i class="fab fa-figma"></i>
+                    <span>UI/UX Design</span>
+                </div>
+                <div class="marquee-item">
+                    <i class="fas fa-chart-line"></i>
+                    <span>سئو و بهینه‌سازی</span>
+                </div>
+                <div class="marquee-item">
+                    <i class="fas fa-shield-alt"></i>
+                    <span>امنیت نرم‌افزار</span>
+                </div>
+                <div class="marquee-item">
+                    <i class="fab fa-python"></i>
+                    <span>Python</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== FAQ SECTION (TWO COLUMNS LAYOUT) ==================== -->
+    <section class="faq-section">
+        <div class="faq-container" x-data="{
+        activeIndex: null,
+        faqs: [
+            {
+                question: 'برای شروع یک پروژه چقدر زمان نیاز است؟',
+                answer: 'زمان شروع پروژه بستگی به پیچیدگی و حجم کار دارد. معمولاً پس از جلسه مشاوره و توافقات اولیه، ظرف ۳ تا ۷ روز کاری پروژه آغاز می‌شود. برای پروژه‌های فوری می‌توانیم هماهنگی‌های لازم را انجام دهیم.',
+                icon: '⏱️'
+            },
+            {
+                question: 'آیا کدهای پروژه تحویل داده می‌شود؟',
+                answer: 'بله، صد در صد. تمام کدها و مستندات فنی پروژه به صورت کامل در اختیار شما قرار می‌گیرد. همچنین خروجی نهایی بدون هیچ وابستگی به من خواهد بود.',
+                icon: '💻'
+            },
+            {
+                question: 'آیا امکان تغییرات بعد از تحویل پروژه وجود دارد؟',
+                answer: 'بله. تا ۳ ماه پس از تحویل، تغییرات جزئی به صورت رایگان انجام می‌شود. تغییرات اساسی نیز با توافق قبلی قابل انجام است.',
+                icon: '🔄'
+            },
+            {
+                question: 'برای اپلیکیشن موبایل از چه تکنولوژی‌هایی استفاده می‌کنید؟',
+                answer: 'بر اساس نیاز پروژه، از Flutter برای ساخت اپلیکیشن‌های Cross-Platform و Swift برای iOS و Kotlin برای اندروید استفاده می‌کنم تا بهترین تجربه کاربری ارائه شود.',
+                icon: '📱'
+            },
+            {
+                question: 'آیا پروژه‌های هوش مصنوعی هم انجام می‌دهید؟',
+                answer: 'بله، تخصص من در حوزه پردازش تصویر، تشخیص الگو و مدل‌های یادگیری عمیق است. پروژه برنجک یکی از نمونه کارهای موفق من در این زمینه است.',
+                icon: '🧠'
+            },
+            {
+                question: 'چطور می‌توانم از امنیت سایت یا اپلیکیشن مطمئن شوم؟',
+                answer: 'من از استانداردهای امنیتی روز دنیا استفاده می‌کنم. رمزنگاری اطلاعات، محافظت در برابر حملات SQL Injection و XSS، و پیاده‌سازی احراز هویت امن از اولویت‌های من است.',
+                icon: '🔒'
+            },
+            {
+                question: 'آیا قرارداد رسمی برای همکاری دارید؟',
+                answer: 'بله، برای هر پروژه یک قرارداد رسمی و قانونی تنظیم می‌شود که شامل جزئیات پروژه، مبلغ، زمان تحویل و شرایط فسخ می‌باشد تا اطمینان خاطر کامل داشته باشید.',
+                icon: '📄'
+            },
+            {
+                question: 'پشتیبانی بعد از تحویل پروژه چگونه است؟',
+                answer: 'بسته به نوع پروژه، بین ۳ تا ۱۲ ماه پشتیبانی رایگان ارائه می‌شود. این پشتیبانی شامل رفع باگ، آموزش کار با سیستم و اعمال تغییرات جزئی است.',
+                icon: '🎧'
+            }
+        ],
+        toggle(index) {
+            this.activeIndex = this.activeIndex === index ? null : index;
+        }
+    }">
+
+            <!-- هدر بخش (بالای هر دو ستون) -->
+            <div class="faq-header">
+                <span class="faq-badge">
+                    <i class="fas fa-question-circle"></i> هر سوالی داری، بپرس
+                </span>
+                <h2 class="faq-title">
+                    پاسخ <span class="faq-title-highlight">سوالات</span> شما
+                </h2>
+                <p class="faq-subtitle">
+                    همه چیز درباره همکاری، فرآیند کار و تکنولوژی‌هایی که استفاده می‌کنم
+                    <i class="fas fa-smile-wink"></i>
+                </p>
+            </div>
+
+            <!-- محتوای اصلی: دو ستون (چپ = سوالات، راست = منشی هوشمند + آمار) -->
+            <div class="faq-two-columns">
+
+                <!-- ستون چپ: سوالات متداول -->
+                <div class="faq-left-column">
+                    <div class="faq-grid">
+                        <div class="faq-column">
+                            <template x-for="(faq, index) in faqs.slice(0, 4)" :key="index">
+                                <div class="faq-item">
+                                    <button @click="toggle(index)" class="faq-question"
+                                        :class="activeIndex === index ? 'active' : ''">
+                                        <div class="faq-question-content">
+                                            <span class="faq-icon" x-text="faq.icon"></span>
+                                            <h3 class="faq-question-text" x-text="faq.question"></h3>
+                                        </div>
+                                        <div class="faq-arrow" :class="activeIndex === index ? 'rotated' : ''">
+                                            <i class="fas fa-chevron-down"></i>
+                                        </div>
+                                    </button>
+                                    <div class="faq-answer" x-show="activeIndex === index" x-collapse>
+                                        <div class="faq-answer-content">
+                                            <p x-text="faq.answer"></p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </template>
+                        </div>
+
+                        <div class="faq-column">
+                            <template x-for="(faq, index) in faqs.slice(4, 8)" :key="index + 4">
+                                <div class="faq-item">
+                                    <button @click="toggle(index + 4)" class="faq-question"
+                                        :class="activeIndex === index + 4 ? 'active' : ''">
+                                        <div class="faq-question-content">
+                                            <span class="faq-icon" x-text="faq.icon"></span>
+                                            <h3 class="faq-question-text" x-text="faq.question"></h3>
+                                        </div>
+                                        <div class="faq-arrow" :class="activeIndex === index + 4 ? 'rotated' : ''">
+                                            <i class="fas fa-chevron-down"></i>
+                                        </div>
+                                    </button>
+                                    <div class="faq-answer" x-show="activeIndex === index + 4" x-collapse>
+                                        <div class="faq-answer-content">
+                                            <p x-text="faq.answer"></p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </template>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ستون راست: منشی هوشمند + آمار -->
+                <div class="faq-right-column">
+                    <div class="faq-sticky-card">
+                        <div class="faq-cta-card">
+                            <div class="faq-cta-icon">🤖</div>
+                            <h3 class="faq-cta-title">هنوز سوالی داری؟</h3>
+                            <p class="faq-cta-desc">از منشی هوشمند بپرس، ۲۴ ساعته پاسخگوی توئه!</p>
+                            <a href="ai-assistant.html" class="faq-smart-btn">
+                                <i class="fas fa-robot"></i>
+                                <span>منشی هوشمند</span>
+                                <i class="fas fa-arrow-left"></i>
+                            </a>
+                        </div>
+
+                        <div class="faq-stats">
+                            <div class="faq-stat-item">
+                                <div class="faq-stat-number">۲۴س</div>
+                                <div class="faq-stat-label">زمان پاسخگویی</div>
+                            </div>
+                            <div class="faq-stat-item">
+                                <div class="faq-stat-number">۱۰۰٪</div>
+                                <div class="faq-stat-label">رضایت مشتری</div>
+                            </div>
+                            <div class="faq-stat-item">
+                                <div class="faq-stat-number">۲۴/۷</div>
+                                <div class="faq-stat-label">پشتیبانی</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== SKILLS SECTION ==================== -->
+    <section class="skills-section">
+        <div class="skills-container" x-data="{
+        activeCategory: 'all',
+        animated: false,
+        
+        skills: [
+            // فرانت‌اند
+            { name: 'HTML5 & CSS3', level: 92, category: 'frontend', icon: '🌐', desc: 'ساختار و استایل مدرن' },
+            { name: 'JavaScript (ES6+)', level: 88, category: 'frontend', icon: '⚡', desc: 'برنامه‌نویسی پیشرفته' },
+            { name: 'React.js', level: 85, category: 'frontend', icon: '⚛️', desc: 'توسعه رابط کاربری' },
+            { name: 'Tailwind CSS', level: 90, category: 'frontend', icon: '💨', desc: 'طراحی سریع و مدرن' },
+            { name: 'Alpine.js', level: 85, category: 'frontend', icon: '🏔️', desc: 'تعاملات سبک' },
+            
+            // بک‌اند
+            { name: 'Laravel', level: 90, category: 'backend', icon: '🔷', desc: 'توسعه قدرتمند PHP' },
+            { name: 'ASP.NET Core', level: 85, category: 'backend', icon: '🔷', desc: 'APIهای امن و مقیاس‌پذیر' },
+            { name: 'Node.js', level: 80, category: 'backend', icon: '🟢', desc: 'بک‌اند جاوااسکریپتی' },
+            { name: 'Python', level: 82, category: 'backend', icon: '🐍', desc: 'هوش مصنوعی و API' },
+            { name: 'RESTful API', level: 88, category: 'backend', icon: '🔗', desc: 'طراحی API استاندارد' },
+            { name: 'MySQL / PostgreSQL', level: 85, category: 'backend', icon: '🗄️', desc: 'طراحی پایگاه داده' },
+            
+            // موبایل
+            { name: 'Flutter', level: 88, category: 'mobile', icon: '📱', desc: 'اپلیکیشن کراس پلتفرم' },
+            { name: 'Swift (iOS)', level: 85, category: 'mobile', icon: '🍎', desc: 'اپلیکیشن iOS' },
+            { name: 'Kotlin (Android)', level: 80, category: 'mobile', icon: '🤖', desc: 'اپلیکیشن اندروید' },
+            
+            // هوش مصنوعی
+            { name: 'Computer Vision', level: 85, category: 'ai', icon: '👁️', desc: 'پردازش تصویر' },
+            { name: 'TensorFlow / PyTorch', level: 80, category: 'ai', icon: '🧠', desc: 'یادگیری عمیق' },
+            { name: 'OpenCV', level: 85, category: 'ai', icon: '📷', desc: 'پردازش ویدیو و تصویر' },
+            
+            // ابزارها
+            { name: 'Git & GitHub', level: 90, category: 'tools', icon: '📚', desc: 'کنترل نسخه' },
+            { name: 'Docker', level: 75, category: 'tools', icon: '🐳', desc: 'کانتینری‌سازی' },
+            { name: 'Figma', level: 82, category: 'tools', icon: '🎨', desc: 'طراحی UI/UX' },
+            { name: 'Postman', level: 88, category: 'tools', icon: '📮', desc: 'تست API' }
+        ],
+        
+        categories: [
+            { id: 'all', name: 'همه', icon: '✨' },
+            { id: 'frontend', name: 'فرانت‌اند', icon: '🎨' },
+            { id: 'backend', name: 'بک‌اند', icon: '⚙️' },
+            { id: 'mobile', name: 'موبایل', icon: '📱' },
+            { id: 'ai', name: 'هوش مصنوعی', icon: '🧠' },
+            { id: 'tools', name: 'ابزارها', icon: '🔧' }
+        ],
+        
+        get filteredSkills() {
+            if (this.activeCategory === 'all') return this.skills;
+            return this.skills.filter(skill => skill.category === this.activeCategory);
+        },
+        
+        getCategoryName(catId) {
+            const cat = this.categories.find(c => c.id === catId);
+            return cat ? cat.name : '';
+        },
+        
+        getStats() {
+            return {
+                total: this.skills.length,
+                frontend: this.skills.filter(s => s.category === 'frontend').length,
+                backend: this.skills.filter(s => s.category === 'backend').length,
+                mobile: this.skills.filter(s => s.category === 'mobile').length,
+                ai: this.skills.filter(s => s.category === 'ai').length,
+                tools: this.skills.filter(s => s.category === 'tools').length
+            };
+        },
+        
+        init() {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting && !this.animated) {
+                        this.animated = true;
+                    }
+                });
+            }, { threshold: 0.2 });
+            observer.observe(this.$el);
+        }
+    }">
+
+            <!-- هدر بخش -->
+            <div class="skills-header">
+                <span class="skills-badge">
+                    <i class="fas fa-code"></i> تخصص‌های من
+                </span>
+                <h2 class="skills-title">
+                    مهارت <span class="skills-title-highlight">هایم</span>
+                </h2>
+                <p class="skills-subtitle">
+                    تکنولوژی‌ها و ابزارهایی که باهاشون کار می‌کنم
+                    <i class="fas fa-tools"></i>
+                </p>
+            </div>
+
+            <!-- دکمه‌های دسته‌بندی -->
+            <div class="skills-categories">
+                <template x-for="cat in categories" :key="cat.id">
+                    <button @click="activeCategory = cat.id; animated = false; setTimeout(() => animated = true, 100)"
+                        :class="activeCategory === cat.id ? 'active' : ''" class="skills-cat-btn">
+                        <span x-text="cat.icon"></span>
+                        <span x-text="cat.name"></span>
+                    </button>
+                </template>
+            </div>
+
+            <!-- شبکه مهارت‌ها -->
+            <div class="skills-grid">
+                <template x-for="(skill, index) in filteredSkills" :key="skill.name">
+                    <div class="skill-card" x-show="activeCategory === 'all' ? true : skill.category === activeCategory"
+                        x-transition:enter="transition ease-out duration-300"
+                        x-transition:enter-start="opacity-0 transform scale-90"
+                        x-transition:enter-end="opacity-100 transform scale-100"
+                        :style="'transition-delay: ' + (index * 50) + 'ms'">
+
+                        <div class="skill-card-inner">
+                            <!-- هدر کارت -->
+                            <div class="skill-header">
+                                <div class="skill-info">
+                                    <span class="skill-icon" x-text="skill.icon"></span>
+                                    <h3 class="skill-name" x-text="skill.name"></h3>
+                                </div>
+                                <div class="skill-percentage" x-text="skill.level + '%'"></div>
+                            </div>
+
+                            <!-- نوار پیشرفت -->
+                            <div class="skill-bar-container">
+                                <div class="skill-bar-fill" :style="'width: ' + (animated ? skill.level : 0) + '%'">
+                                </div>
+                            </div>
+
+                            <!-- توضیحات -->
+                            <div class="skill-desc" x-text="skill.desc"></div>
+                        </div>
+                    </div>
+                </template>
+            </div>
+
+            <!-- آمار کلی -->
+            <div class="skills-stats">
+                <div class="stat-card">
+                    <div class="stat-icon">🎯</div>
+                    <div class="stat-number" x-text="getStats().total"></div>
+                    <div class="stat-label">مهارت تخصصی</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">🎨</div>
+                    <div class="stat-number" x-text="getStats().frontend"></div>
+                    <div class="stat-label">فرانت‌اند</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">⚙️</div>
+                    <div class="stat-number" x-text="getStats().backend"></div>
+                    <div class="stat-label">بک‌اند</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">📱</div>
+                    <div class="stat-number" x-text="getStats().mobile"></div>
+                    <div class="stat-label">موبایل</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">🧠</div>
+                    <div class="stat-number" x-text="getStats().ai"></div>
+                    <div class="stat-label">هوش مصنوعی</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">🔧</div>
+                    <div class="stat-number" x-text="getStats().tools"></div>
+                    <div class="stat-label">ابزارها</div>
+                </div>
+            </div>
+
+            <!-- پیام پایانی -->
+            <div class="skills-footer">
+                <p>
+                    <i class="fas fa-graduation-cap"></i>
+                    همیشه در حال یادگیری تکنولوژی‌های جدید هستم
+                    <i class="fas fa-rocket"></i>
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== PORTFOLIO SECTION (UNIQUE 3D GALLERY) ==================== -->
+    <section class="portfolio-section">
+        <div class="portfolio-container" x-data="{
+        activeFilter: 'all',
+        filters: ['all', 'website', 'app', 'ai', 'branding'],
+        projects: [
+            { id: 1, title: 'پروژه برنجک', category: 'ai', image: 'https://placehold.co/600x400/10b981/white?text=برنجک+AI', desc: 'سیستم تشخیص هوشمند برنج با پردازش تصویر', tech: ['Python', 'TensorFlow', 'OpenCV'], link: '#' },
+            { id: 2, title: 'اپلیکیشن تاکسی اینترنتی', category: 'app', image: 'https://placehold.co/600x400/10b981/white?text=Taxy+App', desc: 'سیستم موقعیت‌یابی لحظه‌ای و مسیریابی', tech: ['Flutter', 'Laravel', 'WebSocket'], link: '#' },
+            { id: 3, title: 'سایت فروشگاهی بین‌المللی', category: 'website', image: 'https://placehold.co/600x400/10b981/white?text=E-commerce', desc: 'پلتفرم فروش آنلاین با چند درگاه پرداخت', tech: ['React', 'Laravel', 'MySQL'], link: '#' },
+            { id: 4, title: 'داشبورد مدیریت هوشمند', category: 'website', image: 'https://placehold.co/600x400/10b981/white?text=Dashboard', desc: 'تحلیل داده‌های لحظه‌ای و گزارش‌گیری خودکار', tech: ['ASP.NET', 'React', 'Chart.js'], link: '#' },
+            { id: 5, title: 'هویت بصری برند کدیاد', category: 'branding', image: 'https://placehold.co/600x400/10b981/white?text=KodYad', desc: 'طراحی لوگو، رنگ و رابط کاربری مدرن', tech: ['Figma', 'Adobe'], link: '#' },
+            { id: 6, title: 'سیستم تشخیص چهره', category: 'ai', image: 'https://placehold.co/600x400/10b981/white?text=Face+Recognition', desc: 'پردازش ویدئوی زنده و تشخیص هویت', tech: ['Python', 'OpenCV', 'Deep Learning'], link: '#' }
+        ],
+        get filteredProjects() {
+            if (this.activeFilter === 'all') return this.projects;
+            return this.projects.filter(p => p.category === this.activeFilter);
+        },
+        getFilterName(filter) {
+            const names = { all: 'همه', website: 'سایت', app: 'اپلیکیشن', ai: 'هوش مصنوعی', branding: 'برندینگ' };
+            return names[filter];
+        }
+    }">
+
+            <div class="portfolio-header">
+                <span class="portfolio-badge"><i class="fas fa-star"></i> نمونه کارها</span>
+                <h2 class="portfolio-title">آخرین <span class="portfolio-title-highlight">پروژه‌ها</span></h2>
+                <p class="portfolio-subtitle">برخی از پروژه‌های موفق من در حوزه‌های مختلف</p>
+            </div>
+
+            <!-- فیلترها -->
+            <div class="portfolio-filters">
+                <template x-for="filter in filters" :key="filter">
+                    <button @click="activeFilter = filter" class="portfolio-filter-btn"
+                        :class="activeFilter === filter ? 'active' : ''" x-text="getFilterName(filter)"></button>
+                </template>
+            </div>
+
+            <!-- گالری پروژه‌ها -->
+            <div class="portfolio-grid">
+                <template x-for="project in filteredProjects" :key="project.id">
+                    <div class="portfolio-card">
+                        <div class="portfolio-card-inner">
+                            <div class="portfolio-image">
+                                <img :src="project.image" :alt="project.title">
+                                <div class="portfolio-overlay">
+                                    <div class="portfolio-tech">
+                                        <template x-for="tech in project.tech" :key="tech">
+                                            <span x-text="tech"></span>
+                                        </template>
+                                    </div>
+                                    <a :href="project.link" class="portfolio-link">
+                                        <i class="fas fa-arrow-left"></i>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="portfolio-info">
+                                <h3 class="portfolio-project-title" x-text="project.title"></h3>
+                                <p class="portfolio-project-desc" x-text="project.desc"></p>
+                            </div>
+                        </div>
+                    </div>
+                </template>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== PRICING SECTION (WITH SERVICE SELECTION) ==================== -->
+    <section class="pricing-section">
+        <div class="pricing-container" x-data="{
+        selectedService: 'website',
+        services: {
+            website: {
+                name: 'طراحی سایت',
+                icon: '🌐',
+                plans: [
+                    { id: 'basic', name: 'اقتصادی', price: 8500000, desc: 'مناسب برای شروع', features: ['وردپرسی', '۵ صفحه', 'پشتیبانی ۱ ماهه', 'سئوی پایه'], popular: false },
+                    { id: 'pro', name: 'حرفه‌ای', price: 18500000, desc: 'پرطرفدارترین', features: ['اختصاصی با Laravel/React', 'نامحدود صفحه', 'پشتیبانی ۳ ماهه', 'سئوی پیشرفته', 'داشبورد مدیریت', 'گواهی SSL'], popular: true },
+                    { id: 'enterprise', name: 'سازمانی', price: 35000000, desc: 'راهکار کامل', features: ['پلتفرم پیشرفته', 'نامحدود صفحه', 'پشتیبانی ۶ ماهه', 'سئوی تخصصی', 'داشبورد سفارشی', 'مشاوره فنی ارشد'], popular: false }
+                ]
+            },
+            app: {
+                name: 'طراحی اپلیکیشن',
+                icon: '📱',
+                plans: [
+                    { id: 'basic', name: 'اقتصادی', price: 12500000, desc: 'اپلیکیشن ساده', features: ['یک پلتفرم (iOS/Android)', '۵ صفحه', 'پشتیبانی ۱ ماهه', 'آپلود در استور'], popular: false },
+                    { id: 'pro', name: 'حرفه‌ای', price: 25000000, desc: 'کراس پلتفرم', features: ['هر دو پلتفرم (Flutter)', 'نامحدود صفحه', 'پشتیبانی ۳ ماهه', 'آپدیت رایگان ۳ ماه', 'پنل مدیریت'], popular: true },
+                    { id: 'enterprise', name: 'Native', price: 48000000, desc: 'Native iOS & Android', features: ['Swift & Kotlin', 'طراحی اختصاصی', 'پشتیبانی ۶ ماهه', 'آپدیت رایگان ۶ ماه', 'مشاوره UX'], popular: false }
+                ]
+            },
+            ai: {
+                name: 'هوش مصنوعی',
+                icon: '🧠',
+                plans: [
+                    { id: 'basic', name: 'پروژه کوچک', price: 15000000, desc: 'پردازش ساده', features: ['مدل آماده', 'پردازش تصویر پایه', 'پشتیبانی ۱ ماهه'], popular: false },
+                    { id: 'pro', name: 'حرفه‌ای', price: 35000000, desc: 'مدل سفارشی', features: ['مدل اختصاصی', 'دقت بالا', 'پشتیبانی ۳ ماهه', 'مستندات کامل'], popular: true },
+                    { id: 'enterprise', name: 'پروژه پیشرفته', price: 75000000, desc: 'راهکار صنعتی', features: ['مدل پیچیده', 'داده‌کاوی', 'پشتیبانی ۶ ماهه', 'استقرار روی سرور'], popular: false }
+                ]
+            },
+            seo: {
+                name: 'سئو و بهینه‌سازی',
+                icon: '📈',
+                plans: [
+                    { id: 'basic', name: 'پایه', price: 2500000, desc: 'سئو داخلی', features: ['بهینه‌سازی محتوا', 'کلمات کلیدی', 'گزارش ماهانه'], popular: false },
+                    { id: 'pro', name: 'حرفه‌ای', price: 5500000, desc: 'سئو کامل', features: ['سئو داخلی و خارجی', 'لینک‌سازی', 'تحلیل رقبا', 'گزارش هفتگی'], popular: true },
+                    { id: 'enterprise', name: 'پیشرفته', price: 12000000, desc: 'سئو تخصصی', features: ['همه موارد بالا', 'استراتژی محتوا', 'مشاوره تخصصی', 'ضمانت نتیجه'], popular: false }
+                ]
+            }
+        },
+        formatPrice(price) {
+            return price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+        }
+    }">
+
+            <div class="pricing-header">
+                <span class="pricing-badge"><i class="fas fa-gem"></i> تعرفه‌های من</span>
+                <h2 class="pricing-title">پلن <span class="pricing-title-highlight">قیمت‌ها</span></h2>
+                <p class="pricing-subtitle">پلنی که مناسب کسب‌وکارت هست رو انتخاب کن</p>
+            </div>
+
+            <!-- انتخاب نوع سرویس -->
+            <div class="service-tabs">
+                <button @click="selectedService = 'website'" :class="selectedService === 'website' ? 'active' : ''"
+                    class="service-tab"><i class="fas fa-globe"></i> طراحی سایت</button>
+                <button @click="selectedService = 'app'" :class="selectedService === 'app' ? 'active' : ''"
+                    class="service-tab"><i class="fas fa-mobile-alt"></i> اپلیکیشن</button>
+                <button @click="selectedService = 'ai'" :class="selectedService === 'ai' ? 'active' : ''"
+                    class="service-tab"><i class="fas fa-brain"></i> هوش مصنوعی</button>
+                <button @click="selectedService = 'seo'" :class="selectedService === 'seo' ? 'active' : ''"
+                    class="service-tab"><i class="fas fa-chart-line"></i> سئو</button>
+            </div>
+
+            <!-- پلن‌ها - با ارتفاع یکسان -->
+            <div class="pricing-grid">
+                <template x-for="plan in services[selectedService].plans" :key="plan.id">
+                    <div class="pricing-card" :class="{ popular: plan.popular }">
+                        <div x-show="plan.popular" class="popular-badge">⭐ محبوب ترین</div>
+                        <div class="pricing-card-inner">
+                            <h3 class="plan-name" x-text="plan.name"></h3>
+                            <p class="plan-desc" x-text="plan.desc"></p>
+                            <div class="plan-price">
+                                <span class="price-amount" x-text="formatPrice(plan.price)"></span>
+                                <span class="price-unit">تومان</span>
+                            </div>
+                            <p class="price-note">پرداخت یکجا - قیمت ثابت</p>
+
+                            <div class="plan-features">
+                                <template x-for="feature in plan.features" :key="feature">
+                                    <div class="feature-item"><i class="fas fa-check-circle"></i><span
+                                            x-text="feature"></span></div>
+                                </template>
+                            </div>
+
+                            <div class="plan-btn-wrapper">
+                                <a href="#" class="plan-btn" :class="plan.popular ? 'popular-btn' : ''"><span>شروع
+                                        پروژه</span><i class="fas fa-arrow-left"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </template>
+            </div>
+            <!-- بخش ۱: ضمانت بازگشت وجه -->
+            <div class="guarantee-wrapper">
+                <div class="guarantee-box">
+                    <div class="guarantee-icon">
+                        <svg class="guarantee-svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z">
+                            </path>
+                        </svg>
+                    </div>
+                    <div class="guarantee-text-box">
+                        <p class="guarantee-title">۳۰ روز ضمانت بازگشت وجه</p>
+                        <p class="guarantee-desc">اگه راضی نبودی پولت رو پس میگیری!</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- بخش ۲: سه ویژگی امکانات -->
+            <div class="features-wrapper">
+                <div class="features-grid-three">
+                    <div class="feature-card-simple">
+                        <div class="feature-emoji">💳</div>
+                        <p class="feature-text">پرداخت امن با درگاه‌های معتبر</p>
+                    </div>
+                    <div class="feature-card-simple">
+                        <div class="feature-emoji">🔄</div>
+                        <p class="feature-text">امکان ارتقا پلن در هر زمان</p>
+                    </div>
+                    <div class="feature-card-simple">
+                        <div class="feature-emoji">⏰</div>
+                        <p class="feature-text">تحویل سریع پروژه</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== TESTIMONIALS SECTION (MINIMAL & MODERN) ==================== -->
+    <section class="testimonials-section">
+        <div class="testimonials-container" x-data="{
+        currentIndex: 0,
+        testimonials: [
+            {
+                id: 1,
+                name: 'محمد رضایی',
+                position: 'مدیرعامل سای‌ویژن',
+                comment: 'همکاری با عرفان فوق‌العاده بود. تخصص فنی بالا و تحویل به‌موقع پروژه هوش مصنوعی برنجک.',
+                rating: 5
+            },
+            {
+                id: 2,
+                name: 'سارا کریمی',
+                position: 'مدیر محصول فالکون',
+                comment: 'طراحی اپلیکیشن موبایل با کیفیت عالی و پشتیبانی فوق‌العاده. کاربران راضی هستند.',
+                rating: 5
+            },
+            {
+                id: 3,
+                name: 'علی محمودی',
+                position: 'مدیر فنی کدیاد',
+                comment: 'مدیریت حرفه‌ای تیم و راهکارهای خلاقانه. همکاری مجدد قطعی است.',
+                rating: 5
+            },
+            {
+                id: 4,
+                name: 'نازنین حسینی',
+                position: 'بنیانگذار شاپی',
+                comment: 'سایت فروشگاهی حرفه‌ای با سرعت عالی و امنیت بالا. فراتر از انتظار.',
+                rating: 4
+            },
+            {
+                id: 5,
+                name: 'رضا قاسمی',
+                position: 'مدیر بازاریابی پیکس‌شو',
+                comment: 'داشبورد مدیریت هوشمند، تحول بزرگ در فرآیندهای ما. بسیار حرفه‌ای.',
+                rating: 5
+            }
+        ],
+        next() {
+            this.currentIndex = (this.currentIndex + 1) % this.testimonials.length;
+        },
+        prev() {
+            this.currentIndex = (this.currentIndex - 1 + this.testimonials.length) % this.testimonials.length;
+        },
+        goTo(index) {
+            this.currentIndex = index;
+        }
+    }">
+
+            <!-- هدر -->
+            <div class="testimonials-header">
+                <h2 class="testimonials-title">
+                    حرف <span class="testimonials-title-highlight">دل</span> مشتریان
+                </h2>
+                <p class="testimonials-subtitle">
+                    تجربه همکاری با من از زبان کسانی که به من اعتماد کردند
+                </p>
+            </div>
+
+            <!-- اسلایدر -->
+            <div class="testimonials-slider">
+                <button @click="prev" class="slider-nav prev">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+
+                <div class="slider-container">
+                    <template x-for="(item, index) in testimonials" :key="item.id">
+                        <div class="testimonial-slide" x-show="currentIndex === index" x-cloak>
+                            <div class="testimonial-card">
+                                <div class="testimonial-quote">
+                                    <i class="fas fa-quote-right"></i>
+                                </div>
+                                <p class="testimonial-comment" x-text="item.comment"></p>
+                                <div class="testimonial-wrapper">
+                                    <div class="testimonial-rating">
+                                        <i class="fas fa-star" :class="item.rating >= 1 ? 'filled' : ''"></i>
+                                        <i class="fas fa-star" :class="item.rating >= 2 ? 'filled' : ''"></i>
+                                        <i class="fas fa-star" :class="item.rating >= 3 ? 'filled' : ''"></i>
+                                        <i class="fas fa-star" :class="item.rating >= 4 ? 'filled' : ''"></i>
+                                        <i class="fas fa-star" :class="item.rating >= 5 ? 'filled' : ''"></i>
+                                    </div>
+                                    <div class="testimonial-user">
+                                        <div class="user-initial">
+                                            <span x-text="item.name.charAt(0)"></span>
+                                        </div>
+                                        <div class="user-info">
+                                            <h4 class="user-name" x-text="item.name"></h4>
+                                            <p class="user-position" x-text="item.position"></p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </template>
+                </div>
+
+                <button @click="next" class="slider-nav next">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+            </div>
+
+            <!-- دات‌ها -->
+            <div class="slider-dots">
+                <template x-for="(item, index) in testimonials" :key="item.id">
+                    <button @click="goTo(index)" class="dot" :class="{ active: currentIndex === index }"></button>
+                </template>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== CONTACT & CTA SECTION (WITH MODAL POPUPS) ==================== -->
+    <section class="contact-section">
+        <div class="contact-container">
+
+            <!-- هدر بخش -->
+            <div class="contact-header">
+                <span class="contact-badge">
+                    <i class="fas fa-paper-plane"></i> آماده همکاری‌ام
+                </span>
+                <h2 class="contact-title">
+                    ثبت درخواست <span class="contact-title-highlight">همکاری</span>
+                </h2>
+                <p class="contact-subtitle">
+                    پروژه‌ات رو بهم بسپار، تا با هم یه محصول فوق‌العاده بسازیم
+                </p>
+            </div>
+
+            <div class="contact-wrapper">
+                <form class="contact-form" id="contactForm">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label><i class="fas fa-user"></i> نام و نام خانوادگی</label>
+                            <input type="text" id="fullname" placeholder="مثال: عرفان رحمتی" required>
+                        </div>
+                        <div class="form-group">
+                            <label><i class="fas fa-phone-alt"></i> شماره تماس</label>
+                            <input type="tel" id="phone" placeholder="مثال: ۰۹۱۲۳۴۵۶۷۸۹" required>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <!-- نوع پروژه -->
+                        <div class="form-group">
+                            <label><i class="fas fa-code"></i> نوع پروژه</label>
+                            <div class="modal-input-trigger" id="projectTypeTriggerBtn">
+                                <div class="modal-input-display">
+                                    <span id="projectTypeDisplay">انتخاب کنید</span>
+                                    <i class="fas fa-chevron-left"></i>
+                                </div>
+                            </div>
+                            <input type="hidden" id="projectType" name="projectType">
+                        </div>
+
+                        <!-- مدت زمان پیشنهادی -->
+                        <div class="form-group">
+                            <label><i class="fas fa-clock"></i> مدت زمان پیشنهادی</label>
+                            <div class="modal-input-trigger" id="deadlineTriggerBtn">
+                                <div class="modal-input-display">
+                                    <span id="deadlineDisplay">انتخاب کنید</span>
+                                    <i class="fas fa-chevron-left"></i>
+                                </div>
+                            </div>
+                            <input type="hidden" id="deadline" name="deadline">
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label><i class="fas fa-wallet"></i> بودجه پیشنهادی (تومان)</label>
+                            <input type="text" id="budget" placeholder="مثال: ۱۵,۰۰۰,۰۰۰">
+                        </div>
+                        <div class="form-group">
+                            <div class="empty-space"></div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label><i class="fas fa-align-right"></i> توضیحات پروژه</label>
+                        <textarea id="description" rows="4" placeholder="لطفاً توضیحات کاملی از پروژه خودتون بدید..."
+                            required></textarea>
+                    </div>
+
+                    <button type="submit" class="submit-btn">
+                        <span>ارسال درخواست همکاری</span>
+                        <i class="fas fa-arrow-left"></i>
+                    </button>
+
+                    <p class="form-note">
+                        <i class="fas fa-shield-alt"></i>
+                        اطلاعات شما نزد من کاملاً محرمانه است و در سریع‌ترین زمان ممکن پاسخگو خواهم بود
+                    </p>
+                </form>
+            </div>
+        </div>
+
+        <!-- ==================== MODAL 1: نوع پروژه ==================== -->
+        <div class="modal-overlay" id="projectTypeModal">
+            <div class="modal-container">
+                <div class="modal-header">
+                    <h3><i class="fas fa-code"></i> انتخاب نوع پروژه</h3>
+                    <button class="modal-close" id="closeProjectModal">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p class="modal-desc">می‌توانید چندین گزینه را همزمان انتخاب کنید</p>
+                    <div class="modal-options">
+                        <label class="modal-checkbox-option">
+                            <input type="checkbox" value="website" class="project-checkbox">
+                            <span class="checkmark"></span>
+                            <span class="option-text">🌐 طراحی سایت</span>
+                        </label>
+                        <label class="modal-checkbox-option">
+                            <input type="checkbox" value="app" class="project-checkbox">
+                            <span class="checkmark"></span>
+                            <span class="option-text">📱 اپلیکیشن موبایل</span>
+                        </label>
+                        <label class="modal-checkbox-option">
+                            <input type="checkbox" value="ai" class="project-checkbox">
+                            <span class="checkmark"></span>
+                            <span class="option-text">🧠 هوش مصنوعی</span>
+                        </label>
+                        <label class="modal-checkbox-option">
+                            <input type="checkbox" value="seo" class="project-checkbox">
+                            <span class="checkmark"></span>
+                            <span class="option-text">📈 سئو و بهینه‌سازی</span>
+                        </label>
+                        <label class="modal-checkbox-option">
+                            <input type="checkbox" value="branding" class="project-checkbox">
+                            <span class="checkmark"></span>
+                            <span class="option-text">🎨 هویت بصری و برندینگ</span>
+                        </label>
+                        <label class="modal-checkbox-option">
+                            <input type="checkbox" value="other" class="project-checkbox">
+                            <span class="checkmark"></span>
+                            <span class="option-text">✨ سایر</span>
+                        </label>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button class="modal-btn-cancel" id="cancelProjectModal">انصراف</button>
+                    <button class="modal-btn-confirm" id="confirmProjectModal">تأیید</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- ==================== MODAL 2: مدت زمان ==================== -->
+        <div class="modal-overlay" id="deadlineModal">
+            <div class="modal-container">
+                <div class="modal-header">
+                    <h3><i class="fas fa-clock"></i> انتخاب مدت زمان پیشنهادی</h3>
+                    <button class="modal-close" id="closeDeadlineModal">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p class="modal-desc">زمان مورد نظر خود را انتخاب کنید</p>
+                    <div class="modal-options">
+                        <label class="modal-radio-option">
+                            <input type="radio" name="deadlineRadio" value="1month">
+                            <span class="custom-radio"></span>
+                            <span class="option-text">⏱️ کمتر از ۱ ماه</span>
+                        </label>
+                        <label class="modal-radio-option">
+                            <input type="radio" name="deadlineRadio" value="2month">
+                            <span class="custom-radio"></span>
+                            <span class="option-text">⏰ ۱ تا ۲ ماه</span>
+                        </label>
+                        <label class="modal-radio-option">
+                            <input type="radio" name="deadlineRadio" value="3month">
+                            <span class="custom-radio"></span>
+                            <span class="option-text">📅 ۲ تا ۳ ماه</span>
+                        </label>
+                        <label class="modal-radio-option">
+                            <input type="radio" name="deadlineRadio" value="4month">
+                            <span class="custom-radio"></span>
+                            <span class="option-text">🗓️ ۳ ماه به بالا</span>
+                        </label>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button class="modal-btn-cancel" id="cancelDeadlineModal">انصراف</button>
+                    <button class="modal-btn-confirm" id="confirmDeadlineModal">تأیید</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== CONTACT INFO & FOOTER SECTION ==================== -->
+    <section class="contact-info-section">
+        <div class="contact-info-container">
+
+            <!-- هدر بخش -->
+            <div class="contact-info-header">
+                <span class="contact-info-badge">
+                    <i class="fas fa-address-card"></i> راه‌های ارتباطی
+                </span>
+                <h2 class="contact-info-title">
+                    بیا <span class="contact-info-title-highlight">با هم</span> حرف بزنیم
+                </h2>
+                <p class="contact-info-subtitle">
+                    مشاوره رایگان - ۲۴ ساعته پاسخگو هستم
+                </p>
+            </div>
+
+            <!-- کارت‌های ارتباطی -->
+            <div class="contact-cards">
+                <!-- واتساپ -->
+                <a href="https://wa.me/989123456789" target="_blank" class="contact-card">
+                    <div class="contact-card-icon whatsapp">
+                        <i class="fab fa-whatsapp"></i>
+                    </div>
+                    <div class="contact-card-info">
+                        <h3>واتساپ</h3>
+                        <p>پاسخگویی فوری</p>
+                        <span>۰۹۱۲۳۴۵۶۷۸۹</span>
+                    </div>
+                    <div class="contact-card-arrow">
+                        <i class="fas fa-arrow-left"></i>
+                    </div>
+                </a>
+
+                <!-- تلگرام -->
+                <a href="https://t.me/erfanrahmati" target="_blank" class="contact-card">
+                    <div class="contact-card-icon telegram">
+                        <i class="fab fa-telegram"></i>
+                    </div>
+                    <div class="contact-card-info">
+                        <h3>تلگرام</h3>
+                        <p>ارسال پیام سریع</p>
+                        <span>@erfanrahmati</span>
+                    </div>
+                    <div class="contact-card-arrow">
+                        <i class="fas fa-arrow-left"></i>
+                    </div>
+                </a>
+
+                <!-- ایمیل -->
+                <a href="mailto:erfan@rahmati.dev" class="contact-card">
+                    <div class="contact-card-icon email">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <div class="contact-card-info">
+                        <h3>ایمیل</h3>
+                        <p>ارسال مستندات پروژه</p>
+                        <span>erfan@rahmati.dev</span>
+                    </div>
+                    <div class="contact-card-arrow">
+                        <i class="fas fa-arrow-left"></i>
+                    </div>
+                </a>
+
+                <!-- لینکدین -->
+                <a href="https://linkedin.com/in/erfanrahmati" target="_blank" class="contact-card">
+                    <div class="contact-card-icon linkedin">
+                        <i class="fab fa-linkedin-in"></i>
+                    </div>
+                    <div class="contact-card-info">
+                        <h3>لینکدین</h3>
+                        <p>سوابق حرفه‌ای</p>
+                        <span>erfanrahmati</span>
+                    </div>
+                    <div class="contact-card-arrow">
+                        <i class="fas fa-arrow-left"></i>
+                    </div>
+                </a>
+            </div>
+
+            <!-- دکورهای حرفه‌ای + اطلاعات -->
+            <div class="contact-decoration">
+                <div class="decoration-line"></div>
+                <div class="contact-stats-mini">
+                    <div class="mini-stat">
+                        <i class="fas fa-clock"></i>
+                        <span>پاسخگویی کمتر از ۲ ساعت</span>
+                    </div>
+                    <div class="mini-stat">
+                        <i class="fas fa-check-circle"></i>
+                        <span>ضمانت کیفیت کار</span>
+                    </div>
+                    <div class="mini-stat">
+                        <i class="fas fa-headset"></i>
+                        <span>پشتیبانی ۲۴/۷</span>
+                    </div>
+                </div>
+                <div class="decoration-line"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== FOOTER ==================== -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-content">
+                <!-- لوگو و نام برند -->
+                <div class="footer-brand">
+                    <div class="logo-area">
+                        <p class="logo-text">
+                            <span class="logo-bracket">&lt;</span>
+                            erfan
+                            <span class="logo-name">rahmati</span>
+                            <span class="logo-bracket">/&gt;</span>
+                        </p>
+                    </div>
+                    <p class="footer-bio">
+                        برنامه‌نویس ارشد | طراح اپلیکیشن | مدیر فنی (CTO)
+                    </p>
+                </div>
+
+                <!-- لینک‌های سریع -->
+                <div class="footer-links">
+                    <div class="footer-links-column">
+                        <h4>دسترسی سریع</h4>
+                        <ul>
+                            <li><a href="#">خانه</a></li>
+                            <li><a href="#">پروژه‌ها</a></li>
+                            <li><a href="#">درباره من</a></li>
+                            <li><a href="#">تماس با من</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-links-column">
+                        <h4>خدمات</h4>
+                        <ul>
+                            <li><a href="#">طراحی سایت</a></li>
+                            <li><a href="#">اپلیکیشن موبایل</a></li>
+                            <li><a href="#">هوش مصنوعی</a></li>
+                            <li><a href="#">سئو و بهینه‌سازی</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-links-column">
+                        <h4>قوانین</h4>
+                        <ul>
+                            <li><a href="#">حریم خصوصی</a></li>
+                            <li><a href="#">شرایط همکاری</a></li>
+                            <li><a href="#">ضمانت‌ها</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- شبکه‌های اجتماعی -->
+                <div class="footer-social">
+                    <h4>دنبال کنید</h4>
+                    <div class="social-icons-footer">
+                        <a href="https://github.com/erfanrahmati" target="_blank" class="social-icon-footer">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="https://linkedin.com/in/erfanrahmati" target="_blank" class="social-icon-footer">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="https://twitter.com/erfanrahmati" target="_blank" class="social-icon-footer">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="https://instagram.com/erfanrahmati" target="_blank" class="social-icon-footer">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- خط جداساز -->
+            <div class="footer-divider"></div>
+
+            <!-- کپی‌رایت -->
+            <div class="footer-copyright">
+                <p>&copy; ۲۰۲۵ - ۱۴۰۴ | تمامی حقوق برای <strong class="copyright-name">عرفان رحمتی</strong> محفوظ است.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+
+    <script src="assets/js/script.js"></script>
+</body>
+
+</html>

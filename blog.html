@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>عرفان رحمتی | برنامه‌نویس و طراح سایت</title>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="assets/css/all.min.css">
+    <!-- Style Link File -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/blog.css">
+    <!-- Alpine.js -->
+    <script defer src="assets/js/cdn.min.js"></script>
+</head>
+
+<body>
+
+    <!-- ==================== HEADER WITH BRACKET LOGO & HAMBURGER MENU ==================== -->
+    <header class="header">
+        <div class="logo-area">
+            <p class="logo-text">
+                <span class="logo-bracket">&lt;</span>
+                erfan
+                <span class="logo-name">rahmati</span>
+                <span class="logo-bracket">/&gt;</span>
+            </p>
+        </div>
+
+        <!-- منوی دسکتاپ -->
+        <div class="nav-menu desktop-menu">
+            <a href="index.html" class="nav-link">خانه<div class="nav-underline"></div></a>
+            <a href="services.html" class="nav-link">خدمات<div class="nav-underline"></div></a>
+            <a href="aboutus.html" class="nav-link">درباره من<div class="nav-underline"></div></a>
+            <a href="portfolio.html" class="nav-link">نمونه کارها<div class="nav-underline"></div></a>
+            <a href="contactus.html" class="nav-link">تماس با من<div class="nav-underline"></div></a>
+            <a href="blog.html" class="nav-link">وبلاگ من<div class="nav-underline"></div></a>
+        </div>
+
+        <!-- دکمه‌های سمت چپ دسکتاپ -->
+        <div class="actions-area desktop-actions">
+            <button id="themeToggle" class="theme-btn">
+                <i id="themeIcon" class="fas fa-moon"></i>
+            </button>
+            <a href="ai-assistant.html" class="btn-smart"><i class="fas fa-robot"></i> منشی هوشمند</a>
+            <a href="#" class="btn-outline">درخواست همکاری</a>
+        </div>
+
+        <!-- دکمه همبرگری (فقط در موبایل و تبلت) -->
+        <div class="hamburger-menu" id="hamburgerBtn">
+            <div class="hamburger-line"></div>
+            <div class="hamburger-line"></div>
+            <div class="hamburger-line"></div>
+        </div>
+    </header>
+
+    <!-- منوی موبایل (اسلاید از راست) -->
+    <div class="mobile-nav" id="mobileNav">
+        <div class="mobile-nav-header">
+            <div class="mobile-logo">
+                <span class="mobile-logo-bracket">&lt;</span>
+                erfan
+                <span class="mobile-logo-name">rahmati</span>
+                <span class="mobile-logo-bracket">/&gt;</span>
+            </div>
+            <button class="mobile-nav-close" id="closeMobileNav">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div class="mobile-nav-links">
+            <a href="index.html" class="mobile-nav-link">خانه</a>
+            <a href="services.html" class="mobile-nav-link">خدمات</a>
+            <a href="aboutus.html" class="mobile-nav-link">درباره من</a>
+            <a href="portfolio.html" class="mobile-nav-link">نمونه کارها</a>
+            <a href="contactus.html" class="mobile-nav-link">تماس با من</a>
+            <a href="blog.html" class="mobile-nav-link">وبلاگ من</a>
+        </div>
+        <div class="mobile-nav-actions">
+            <button id="mobileThemeToggle" class="mobile-theme-btn">
+                <i id="mobileThemeIcon" class="fas fa-moon"></i>
+                <span>تغییر تم</span>
+            </button>
+            <a href="ai-assistant.html" class="mobile-btn-smart"><i class="fas fa-robot"></i> منشی هوشمند</a>
+            <a href="#" class="mobile-btn-outline">درخواست همکاری</a>
+        </div>
+    </div>
+
+    <!-- اوورلی (پشت منوی موبایل) -->
+    <div class="mobile-overlay" id="mobileOverlay"></div>
+
+
+    <!-- ==================== BLOG PAGE CONTENT (عرفان رحمتی) ==================== -->
+    <main class="blog-main" itemscope itemtype="https://schema.org/Blog">
+        <!-- هدر صفحه بلاگ (سئو شده) -->
+        <section class="blog-header">
+            <div class="blog-header-badge">
+                <i class="fas fa-pen-fancy"></i>
+                <span>وبلاگ عرفان رحمتی</span>
+            </div>
+            <h1>آخرین <span>نوشته‌ها و مقالات</span></h1>
+            <p>مرجع تخصصی برنامه‌نویسی، طراحی سایت، اپلیکیشن، هوش مصنوعی و سئو</p>
+            <div class="header-search">
+                <form action="/search" method="get" class="blog-search-form">
+                    <input type="text" name="q" placeholder="جستجوی مقالات..." aria-label="جستجو در وبلاگ">
+                    <button type="submit" aria-label="جستجو"><i class="fas fa-search"></i></button>
+                </form>
+            </div>
+        </section>
+
+        <!-- محتوای اصلی وبلاگ: شبکه مقالات + سایدبار -->
+        <div class="blog-layout">
+            <!-- بخش اصلی: مقالات -->
+            <div class="blog-posts-grid" itemprop="blogPosts" itemscope itemtype="https://schema.org/BlogPosting">
+                <!-- مقاله ۱ -->
+                <article class="post-card" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+                    <a href="blog-posts/laravel-vs-wordpress.html" class="post-link">
+                        <figure class="post-image">
+                            <img src="https://placehold.co/600x400/10b981/white?text=Laravel+vs+WordPress"
+                                alt="مقایسه لاراول و وردپرس" loading="lazy" itemprop="image">
+                            <span class="post-category">طراحی سایت</span>
+                        </figure>
+                        <div class="post-content">
+                            <div class="post-meta">
+                                <span class="post-date"><i class="far fa-calendar-alt"></i> ۲۵ فروردین ۱۴۰۴</span>
+                                <span class="post-read-time"><i class="far fa-clock"></i> ۸ دقیقه</span>
+                            </div>
+                            <h2 itemprop="headline">لاراول یا وردپرس؟ کدام برای سایت فروشگاهی شما بهتر است؟</h2>
+                            <p itemprop="description">مقایسه کامل امنیت، سرعت، هزینه و مقیاس‌پذیری دو پلتفرم محبوب طراحی
+                                سایت و راهنمای انتخاب بهترین گزینه برای کسب‌وکارتان.</p>
+                            <div class="post-footer">
+                                <span class="read-more">ادامه مطلب <i class="fas fa-arrow-left"></i></span>
+                                <div class="post-tags">
+                                    <span>#Laravel</span>
+                                    <span>#WordPress</span>
+                                    <span>#طراحی سایت</span>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </article>
+
+                <!-- مقاله ۲ -->
+                <article class="post-card" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+                    <a href="blog-posts/flutter-cross-platform.html" class="post-link">
+                        <figure class="post-image">
+                            <img src="https://placehold.co/600x400/0f172a/white?text=Flutter+Mobile"
+                                alt="توسعه اپلیکیشن با فلاتر" loading="lazy" itemprop="image">
+                            <span class="post-category">اپلیکیشن موبایل</span>
+                        </figure>
+                        <div class="post-content">
+                            <div class="post-meta">
+                                <span class="post-date"><i class="far fa-calendar-alt"></i> ۱۰ اردیبهشت ۱۴۰۴</span>
+                                <span class="post-read-time"><i class="far fa-clock"></i> ۱۲ دقیقه</span>
+                            </div>
+                            <h2 itemprop="headline">چرا Flutter بهترین انتخاب برای استارتاپ‌هاست؟</h2>
+                            <p itemprop="description">بررسی مزایای کراس پلتفرم، کاهش هزینه و زمان توسعه، تجربه کاربری
+                                یکپارچه در اندروید و iOS با مثال‌های واقعی.</p>
+                            <div class="post-footer">
+                                <span class="read-more">ادامه مطلب <i class="fas fa-arrow-left"></i></span>
+                                <div class="post-tags">
+                                    <span>#Flutter</span>
+                                    <span>#اپلیکیشن</span>
+                                    <span>#استارتاپ</span>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </article>
+
+                <!-- مقاله ۳: هوش مصنوعی برنجک -->
+                <article class="post-card" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+                    <a href="blog-posts/rice-detection-ai.html" class="post-link">
+                        <figure class="post-image">
+                            <img src="https://placehold.co/600x400/10b981/white?text=AI+Vision"
+                                alt="پروژه برنجک هوش مصنوعی" loading="lazy" itemprop="image">
+                            <span class="post-category">هوش مصنوعی</span>
+                        </figure>
+                        <div class="post-content">
+                            <div class="post-meta">
+                                <span class="post-date"><i class="far fa-calendar-alt"></i> ۲۰ اردیبهشت ۱۴۰۴</span>
+                                <span class="post-read-time"><i class="far fa-clock"></i> ۱۰ دقیقه</span>
+                            </div>
+                            <h2 itemprop="headline">پروژه برنجک: تشخیص هوشمند برنج با دقت ۹۶٪</h2>
+                            <p itemprop="description">روایت کامل پیاده‌سازی یک سیستم پردازش تصویر صنعتی با TensorFlow و
+                                OpenCV و چالش‌های واقعی دنیای هوش مصنوعی.</p>
+                            <div class="post-footer">
+                                <span class="read-more">ادامه مطلب <i class="fas fa-arrow-left"></i></span>
+                                <div class="post-tags">
+                                    <span>#AI</span>
+                                    <span>#ComputerVision</span>
+                                    <span>#TensorFlow</span>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </article>
+
+                <!-- مقاله ۴: سئو فنی -->
+                <article class="post-card" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+                    <a href="blog-posts/seo-technical-guide.html" class="post-link">
+                        <figure class="post-image">
+                            <img src="https://placehold.co/600x400/0f172a/white?text=SEO+Guide"
+                                alt="راهنمای سئو تکنیکال" loading="lazy" itemprop="image">
+                            <span class="post-category">سئو و بهینه‌سازی</span>
+                        </figure>
+                        <div class="post-content">
+                            <div class="post-meta">
+                                <span class="post-date"><i class="far fa-calendar-alt"></i> ۵ خرداد ۱۴۰۴</span>
+                                <span class="post-read-time"><i class="far fa-clock"></i> ۱۵ دقیقه</span>
+                            </div>
+                            <h2 itemprop="headline">سئو تکنیکال: گام به گام تا رتبه اول گوگل</h2>
+                            <p itemprop="description">آموزش کامل بهبود سرعت، ساختار URL، شِمای مارکاپ، فایل robots.txt و
+                                سایر فاکتورهای فنی مؤثر در سئو.</p>
+                            <div class="post-footer">
+                                <span class="read-more">ادامه مطلب <i class="fas fa-arrow-left"></i></span>
+                                <div class="post-tags">
+                                    <span>#سئو</span>
+                                    <span>#SEO_Technical</span>
+                                    <span>#دیتابیس_گوگل</span>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </article>
+
+                <!-- مقاله ۵ برندینگ -->
+                <article class="post-card" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+                    <a href="blog-posts/branding-digital.html" class="post-link">
+                        <figure class="post-image">
+                            <img src="https://placehold.co/600x400/10b981/white?text=Branding" alt="برندسازی دیجیتال"
+                                loading="lazy" itemprop="image">
+                            <span class="post-category">برندینگ</span>
+                        </figure>
+                        <div class="post-content">
+                            <div class="post-meta">
+                                <span class="post-date"><i class="far fa-calendar-alt"></i> ۱۵ خرداد ۱۴۰۴</span>
+                                <span class="post-read-time"><i class="far fa-clock"></i> ۷ دقیقه</span>
+                            </div>
+                            <h2 itemprop="headline">راهکارهای عملی برای برندسازی قدرتمند در فضای آنلاین</h2>
+                            <p itemprop="description">از لوگو و هویت بصری تا استراتژی محتوا و وفادارسازی مشتری – هر آنچه
+                                برای ساختن یک برند ماندگار نیاز دارید.</p>
+                            <div class="post-footer">
+                                <span class="read-more">ادامه مطلب <i class="fas fa-arrow-left"></i></span>
+                                <div class="post-tags">
+                                    <span>#برندینگ</span>
+                                    <span>#هویت_بصری</span>
+                                    <span>#بازاریابی_محتوایی</span>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </article>
+            </div>
+
+            <!-- سایدبار وبلاگ -->
+            <aside class="blog-sidebar">
+                <!-- جستجوی پیشرفته -->
+                <div class="sidebar-widget search-widget">
+                    <h3><i class="fas fa-search"></i> جستجو</h3>
+                    <form action="/search" method="get">
+                        <input type="text" name="q" placeholder="متن مقاله..." aria-label="جستجو در مقالات">
+                        <button type="submit">جستجو</button>
+                    </form>
+                </div>
+
+                <!-- دسته‌بندی‌ها -->
+                <div class="sidebar-widget categories-widget">
+                    <h3><i class="fas fa-folder-open"></i> دسته‌بندی‌ها</h3>
+                    <ul>
+                        <li><a href="#">طراحی سایت <span>۱۲</span></a></li>
+                        <li><a href="#">اپلیکیشن موبایل <span>۸</span></a></li>
+                        <li><a href="#">هوش مصنوعی <span>۵</span></a></li>
+                        <li><a href="#">سئو و بهینه‌سازی <span>۷</span></a></li>
+                        <li><a href="#">برندینگ و هویت بصری <span>۴</span></a></li>
+                        <li><a href="#">مشاوره فنی <span>۳</span></a></li>
+                    </ul>
+                </div>
+
+                <!-- پست‌های اخیر -->
+                <div class="sidebar-widget recent-posts-widget">
+                    <h3><i class="fas fa-clock"></i> جدیدترین مطالب</h3>
+                    <ul>
+                        <li><a href="blog-posts/laravel-vs-wordpress.html">مقایسه لاراول و وردپرس</a><span
+                                class="recent-date">۲۵ فروردین ۱۴۰۴</span></li>
+                        <li><a href="blog-posts/flutter-cross-platform.html">چرا Flutter بهترین انتخاب برای
+                                استارتاپ‌هاست؟</a><span class="recent-date">۱۰ اردیبهشت ۱۴۰۴</span></li>
+                        <li><a href="blog-posts/rice-detection-ai.html">پروژه برنجک و هوش مصنوعی</a><span
+                                class="recent-date">۲۰ اردیبهشت ۱۴۰۴</span></li>
+                        <li><a href="blog-posts/seo-technical-guide.html">سئو تکنیکال گام به گام</a><span
+                                class="recent-date">۵ خرداد ۱۴۰۴</span></li>
+                    </ul>
+                </div>
+
+                <!-- برچسب‌ها -->
+                <div class="sidebar-widget tags-widget">
+                    <h3><i class="fas fa-tags"></i> برچسب‌های محبوب</h3>
+                    <div class="tag-cloud">
+                        <a href="#" class="skill-badge">Laravel</a>
+                        <a href="#" class="skill-badge">React</a>
+                        <a href="#" class="skill-badge">Flutter</a>
+                        <a href="#" class="skill-badge">Python</a>
+                        <a href="#" class="skill-badge">سئو</a>
+                        <a href="#" class="skill-badge">هوش مصنوعی</a>
+                        <a href="#" class="skill-badge">برندینگ</a>
+                        <a href="#" class="skill-badge">طراحی سایت</a>
+                        <a href="#" class="skill-badge">اپلیکیشن</a>
+                        <a href="#" class="skill-badge">وردپرس</a>
+                        <a href="#" class="skill-badge">CTO</a>
+                    </div>
+                </div>
+
+                <!-- خبرنامه -->
+                <div class="sidebar-widget newsletter-widget">
+                    <h3><i class="fas fa-envelope"></i> دریافت جدیدترین مطالب</h3>
+                    <p>با ثبت ایمیل، اولین نفری باشید که از مقالات جدید مطلع می‌شوید.</p>
+                    <form action="#" method="post" class="newsletter-form">
+                        <input type="email" name="email" placeholder="ایمیل شما" required>
+                        <button type="submit">عضویت <i class="fas fa-arrow-left"></i></button>
+                    </form>
+                </div>
+            </aside>
+        </div>
+    </main>
+
+
+    <!-- ==================== FOOTER ==================== -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-content">
+                <!-- لوگو و نام برند -->
+                <div class="footer-brand">
+                    <div class="logo-area">
+                        <p class="logo-text">
+                            <span class="logo-bracket">&lt;</span>
+                            erfan
+                            <span class="logo-name">rahmati</span>
+                            <span class="logo-bracket">/&gt;</span>
+                        </p>
+                    </div>
+                    <p class="footer-bio">
+                        برنامه‌نویس ارشد | طراح اپلیکیشن | مدیر فنی (CTO)
+                    </p>
+                </div>
+
+                <!-- لینک‌های سریع -->
+                <div class="footer-links">
+                    <div class="footer-links-column">
+                        <h4>دسترسی سریع</h4>
+                        <ul>
+                            <li><a href="#">خانه</a></li>
+                            <li><a href="#">پروژه‌ها</a></li>
+                            <li><a href="#">درباره من</a></li>
+                            <li><a href="#">تماس با من</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-links-column">
+                        <h4>خدمات</h4>
+                        <ul>
+                            <li><a href="#">طراحی سایت</a></li>
+                            <li><a href="#">اپلیکیشن موبایل</a></li>
+                            <li><a href="#">هوش مصنوعی</a></li>
+                            <li><a href="#">سئو و بهینه‌سازی</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-links-column">
+                        <h4>قوانین</h4>
+                        <ul>
+                            <li><a href="#">حریم خصوصی</a></li>
+                            <li><a href="#">شرایط همکاری</a></li>
+                            <li><a href="#">ضمانت‌ها</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- شبکه‌های اجتماعی -->
+                <div class="footer-social">
+                    <h4>دنبال کنید</h4>
+                    <div class="social-icons-footer">
+                        <a href="https://github.com/erfanrahmati" target="_blank" class="social-icon-footer">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="https://linkedin.com/in/erfanrahmati" target="_blank" class="social-icon-footer">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="https://twitter.com/erfanrahmati" target="_blank" class="social-icon-footer">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="https://instagram.com/erfanrahmati" target="_blank" class="social-icon-footer">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- خط جداساز -->
+            <div class="footer-divider"></div>
+
+            <!-- کپی‌رایت -->
+            <div class="footer-copyright">
+                <p>&copy; ۲۰۲۵ - ۱۴۰۴ | تمامی حقوق برای <strong class="copyright-name">عرفان رحمتی</strong> محفوظ است.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+
+    <script src="assets/js/script.js"></script>
+    <script src="assets/js/blog.js"></script>
+</body>
+
+</html>
